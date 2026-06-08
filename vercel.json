@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "botoxdrammen/index.html", "use": "@vercel/static" },
+    { "src": "hudpleiedrammen/index.html", "use": "@vercel/static" },
+    { "src": "laserdrammen/index.html", "use": "@vercel/static" },
+    { "src": "_shared/**", "use": "@vercel/static" }
+  ]
+}
