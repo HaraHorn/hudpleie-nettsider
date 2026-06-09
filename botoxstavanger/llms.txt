@@ -1,0 +1,22 @@
+# BotoxStavanger.no
+
+> Gratis oversikt over klinikker i Stavanger som tilbyr botox, fillers og estetisk medisin.
+
+BotoxStavanger.no hjelper deg å finne botox- og fillerklinikker i Stavanger og omegn med autorisert helsepersonell. Siden lister adresse, telefon og nettside for hver klinikk.
+
+## Klinikker
+- 5 botox- og fillerklinikker i Stavanger og omegn
+- Klinikkinformasjon oppdateres via Google Places
+- Informasjon hentet fra Google Places
+
+## Tjenester
+Klinikkene tilbyr botox-injeksjoner, fillers og estetisk medisin. Behandlingene skal ifølge norsk lov utføres av autorisert helsepersonell (leger, tannleger eller spesialsykepleiere).
+
+## By
+Stavanger, Rogaland fylke, Norge. Ca. 145 000 innbyggere. Sentrale bydeler: Stavanger sentrum, Hillevåg og Madla.
+
+## Om siden
+- Gratis å bruke for alle besøkende
+- Eier: HaraHorn, Org.nr 915 158 323
+- Kontakt: Hello@HaraHorn.com
+- Se også: HudpleieStavanger.no, LaserStavanger.no

@@ -1,0 +1,22 @@
+# LaserBergen.no
+
+> Gratis oversikt over klinikker i Bergen som tilbyr laserbehandling og hårfjerning.
+
+LaserBergen.no hjelper deg å finne laserklinikker i Bergen og omegn. Siden lister adresse, telefon og nettside for hver klinikk.
+
+## Klinikker
+- 5 laserklinikker i Bergen og omegn
+- Klinikkinformasjon oppdateres via Google Places
+- Informasjon hentet fra Google Places
+
+## Tjenester
+Klinikkene tilbyr laserhårfjerning, hudforynging, IPL, pigmentbehandling og tatoveringsfjerning.
+
+## By
+Bergen, Vestland fylke, Norge. Ca. 290 000 innbyggere. Sentrale bydeler: Sentrum, Nordnes, Sandviken og Fløen.
+
+## Om siden
+- Gratis å bruke for alle besøkende
+- Eier: HaraHorn, Org.nr 915 158 323
+- Kontakt: Hello@HaraHorn.com
+- Se også: HudpleieBergen.no, BotoxBergen.no

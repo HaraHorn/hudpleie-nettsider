@@ -1,0 +1,22 @@
+# BotoxBergen.no
+
+> Gratis oversikt over klinikker i Bergen som tilbyr botox, fillers og estetisk medisin.
+
+BotoxBergen.no hjelper deg å finne botox- og fillerklinikker i Bergen og omegn med autorisert helsepersonell. Siden lister adresse, telefon og nettside for hver klinikk.
+
+## Klinikker
+- 5 botox- og fillerklinikker i Bergen og omegn
+- Klinikkinformasjon oppdateres via Google Places
+- Informasjon hentet fra Google Places
+
+## Tjenester
+Klinikkene tilbyr botox-injeksjoner, fillers og estetisk medisin. Behandlingene skal ifølge norsk lov utføres av autorisert helsepersonell (leger, tannleger eller spesialsykepleiere).
+
+## By
+Bergen, Vestland fylke, Norge. Ca. 290 000 innbyggere. Sentrale bydeler: Sentrum, Nordnes og Sandviken.
+
+## Om siden
+- Gratis å bruke for alle besøkende
+- Eier: HaraHorn, Org.nr 915 158 323
+- Kontakt: Hello@HaraHorn.com
+- Se også: HudpleieBergen.no, LaserBergen.no
