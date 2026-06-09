@@ -83,7 +83,7 @@ Hver side har disse unike verdiene:
 - H1 skal inneholde søkeord + bynavn
 - Seksjonene `seo-section` og `faq-section` er kritiske for SEO – ikke fjern dem
 - `seo-section` skal starte med et `<p class="city-intro">` med unik by-info (innbyggertall, fylke, bydeler)
-- `sitemap.xml` og `robots.txt` MÅ opprettes i sidens mappe for nye sider
+- `sitemap.xml`, `robots.txt` og `llms.txt` MÅ opprettes i sidens mappe for nye sider
 - `dateModified` i WebPage JSON-LD skal oppdateres ved innholdsendringer
 
 ## Nye sider
@@ -93,7 +93,7 @@ For å legge til en ny side (f.eks. BotoxBergen.no):
 3. Oppdater canonical URL, og:image, og Schema.org (inkl. dateModified)
 4. Oppdater `BY_INTRO`-avsnittet med Bergens innbyggertall, fylke og bydeler
 5. Finn 5 ekte klinikker (se prosess nedenfor) og erstatt klinikkdata
-6. Oppdater `sitemap.xml` med ny URL og `robots.txt` med nytt domene
+6. Oppdater `sitemap.xml` med ny URL, `robots.txt` med nytt domene, og `llms.txt` med ny by/søkeord
 7. Sjekk alle sider for skrivefeil før push
 
 ## Finn 5 klinikker til en ny side
