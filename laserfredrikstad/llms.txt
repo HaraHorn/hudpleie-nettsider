@@ -1,0 +1,16 @@
+# LaserFredrikstad.no
+
+## Hva er denne siden?
+LaserFredrikstad.no er en oversiktsside over klinikker som tilbyr laserbehandling og hårfjerning i Fredrikstad.
+
+## Innhold
+- Liste over anbefalte laserbehandlingsklinikker i Fredrikstad med adresse, telefon og nettside
+- Informasjon om laserbehandling og hårfjerning
+- Prisinformasjon og hva man kan forvente
+- FAQ om laserbehandling
+
+## Fredrikstad
+Fredrikstad er en by med ca. 83 000 innbyggere i Østfold fylke, kjent for Gamlebyen og Glomma-deltaet. Sentrale bydeler: Fredrikstad sentrum, Gamlebyen, Øra, Rolvsøy.
+
+## Kontakt
+Eier: HaraHorn | E-post: Hello@HaraHorn.com

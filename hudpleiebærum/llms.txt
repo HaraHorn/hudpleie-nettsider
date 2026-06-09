@@ -1,0 +1,16 @@
+# HudpleieBærum.no
+
+## Hva er denne siden?
+HudpleieBærum.no er en oversiktsside over hudpleiesteder og skjønnhetsklinikker i Bærum.
+
+## Innhold
+- Liste over anbefalte hudpleiesteder i Bærum med adresse, telefon og nettside
+- Informasjon om ulike hudpleiebehandlinger
+- Prisinformasjon og hva man kan forvente
+- FAQ om hudpleie
+
+## Bærum
+Bærum er en kommune med ca. 130 000 innbyggere i Akershus fylke, plassert vest for Oslo langs Oslofjorden. Sentrale steder: Sandvika, Bekkestua, Fornebu, Høvik.
+
+## Kontakt
+Eier: HaraHorn | E-post: Hello@HaraHorn.com

@@ -1,0 +1,16 @@
+# HudpleieTromsø.no
+
+## Hva er denne siden?
+HudpleieTromsø.no er en oversiktsside over hudpleiesteder og skjønnhetsklinikker i Tromsø.
+
+## Innhold
+- Liste over anbefalte hudpleiesteder i Tromsø med adresse, telefon og nettside
+- Informasjon om ulike hudpleiebehandlinger
+- Prisinformasjon og hva man kan forvente
+- FAQ om hudpleie
+
+## Tromsø
+Tromsø er en by med ca. 78 000 innbyggere i Troms og Finnmark fylke, beliggende på Tromsøya. Sentrale bydeler: Tromsø sentrum, Tromsødalen, Kvaløya, Langnes.
+
+## Kontakt
+Eier: HaraHorn | E-post: Hello@HaraHorn.com

@@ -1,0 +1,16 @@
+# HudpleieSarpsborg.no
+
+## Hva er denne siden?
+HudpleieSarpsborg.no er en oversiktsside over hudpleiesteder og skjønnhetsklinikker i Sarpsborg.
+
+## Innhold
+- Liste over anbefalte hudpleiesteder i Sarpsborg med adresse, telefon og nettside
+- Informasjon om ulike hudpleiebehandlinger
+- Prisinformasjon og hva man kan forvente
+- FAQ om hudpleie
+
+## Sarpsborg
+Sarpsborg er en by med ca. 60 000 innbyggere i Østfold fylke, en av Norges eldste byer langs Glomma. Sentrale steder: Sarpsborg sentrum, Tune, Skjeberg, Borge.
+
+## Kontakt
+Eier: HaraHorn | E-post: Hello@HaraHorn.com

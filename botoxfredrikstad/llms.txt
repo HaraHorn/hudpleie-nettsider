@@ -1,0 +1,16 @@
+# BotoxFredrikstad.no
+
+## Hva er denne siden?
+BotoxFredrikstad.no er en oversiktsside over klinikker som tilbyr botox og estetiske injeksjonsbehandlinger i Fredrikstad.
+
+## Innhold
+- Liste over anbefalte klinikker i Fredrikstad med adresse, telefon og nettside
+- Informasjon om hva botox er og hvordan behandlingen foregår
+- Prisinformasjon og hva man kan forvente
+- FAQ om botox-behandling
+
+## Fredrikstad
+Fredrikstad er en by med ca. 83 000 innbyggere i Østfold fylke, kjent for Gamlebyen og Glomma-deltaet. Sentrale bydeler: Fredrikstad sentrum, Gamlebyen, Øra, Rolvsøy.
+
+## Kontakt
+Eier: HaraHorn | E-post: Hello@HaraHorn.com

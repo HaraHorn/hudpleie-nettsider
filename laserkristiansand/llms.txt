@@ -1,0 +1,16 @@
+# LaserKristiansand.no
+
+## Hva er denne siden?
+LaserKristiansand.no er en oversiktsside over klinikker som tilbyr laserbehandling og hårfjerning i Kristiansand.
+
+## Innhold
+- Liste over anbefalte laserbehandlingsklinikker i Kristiansand med adresse, telefon og nettside
+- Informasjon om laserbehandling og hårfjerning
+- Prisinformasjon og hva man kan forvente
+- FAQ om laserbehandling
+
+## Kristiansand
+Kristiansand er Norges femte største by med ca. 115 000 innbyggere i Agder fylke, beliggende ved Otra og Skagerrak. Sentrale bydeler: Kvadraturen, Lund, Eg, Vågsbygd.
+
+## Kontakt
+Eier: HaraHorn | E-post: Hello@HaraHorn.com

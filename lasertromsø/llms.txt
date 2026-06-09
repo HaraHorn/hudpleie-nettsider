@@ -1,0 +1,16 @@
+# LaserTromsø.no
+
+## Hva er denne siden?
+LaserTromsø.no er en oversiktsside over klinikker som tilbyr laserbehandling og hårfjerning i Tromsø.
+
+## Innhold
+- Liste over anbefalte laserbehandlingsklinikker i Tromsø med adresse, telefon og nettside
+- Informasjon om laserbehandling og hårfjerning
+- Prisinformasjon og hva man kan forvente
+- FAQ om laserbehandling
+
+## Tromsø
+Tromsø er en by med ca. 78 000 innbyggere i Troms og Finnmark fylke, beliggende på Tromsøya. Sentrale bydeler: Tromsø sentrum, Tromsødalen, Kvaløya, Langnes.
+
+## Kontakt
+Eier: HaraHorn | E-post: Hello@HaraHorn.com

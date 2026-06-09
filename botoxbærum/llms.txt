@@ -1,0 +1,16 @@
+# BotoxBærum.no
+
+## Hva er denne siden?
+BotoxBærum.no er en oversiktsside over klinikker som tilbyr botox og estetiske injeksjonsbehandlinger i Bærum.
+
+## Innhold
+- Liste over anbefalte klinikker i Bærum med adresse, telefon og nettside
+- Informasjon om hva botox er og hvordan behandlingen foregår
+- Prisinformasjon og hva man kan forvente
+- FAQ om botox-behandling
+
+## Bærum
+Bærum er en kommune med ca. 130 000 innbyggere i Akershus fylke, plassert vest for Oslo langs Oslofjorden. Sentrale steder: Sandvika, Bekkestua, Fornebu, Høvik.
+
+## Kontakt
+Eier: HaraHorn | E-post: Hello@HaraHorn.com

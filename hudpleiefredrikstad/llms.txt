@@ -1,0 +1,16 @@
+# HudpleieFredrikstad.no
+
+## Hva er denne siden?
+HudpleieFredrikstad.no er en oversiktsside over hudpleiesteder og skjønnhetsklinikker i Fredrikstad.
+
+## Innhold
+- Liste over anbefalte hudpleiesteder i Fredrikstad med adresse, telefon og nettside
+- Informasjon om ulike hudpleiebehandlinger
+- Prisinformasjon og hva man kan forvente
+- FAQ om hudpleie
+
+## Fredrikstad
+Fredrikstad er en by med ca. 83 000 innbyggere i Østfold fylke, kjent for Gamlebyen og Glomma-deltaet. Sentrale bydeler: Fredrikstad sentrum, Gamlebyen, Øra, Rolvsøy.
+
+## Kontakt
+Eier: HaraHorn | E-post: Hello@HaraHorn.com

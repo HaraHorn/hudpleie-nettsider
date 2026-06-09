@@ -1,0 +1,16 @@
+# BotoxTromsø.no
+
+## Hva er denne siden?
+BotoxTromsø.no er en oversiktsside over klinikker som tilbyr botox og estetiske injeksjonsbehandlinger i Tromsø.
+
+## Innhold
+- Liste over anbefalte klinikker i Tromsø med adresse, telefon og nettside
+- Informasjon om hva botox er og hvordan behandlingen foregår
+- Prisinformasjon og hva man kan forvente
+- FAQ om botox-behandling
+
+## Tromsø
+Tromsø er en by med ca. 78 000 innbyggere i Troms og Finnmark fylke, beliggende på Tromsøya. Sentrale bydeler: Tromsø sentrum, Tromsødalen, Kvaløya, Langnes.
+
+## Kontakt
+Eier: HaraHorn | E-post: Hello@HaraHorn.com

@@ -1,0 +1,16 @@
+# LaserSarpsborg.no
+
+## Hva er denne siden?
+LaserSarpsborg.no er en oversiktsside over klinikker som tilbyr laserbehandling og hårfjerning i Sarpsborg.
+
+## Innhold
+- Liste over anbefalte laserbehandlingsklinikker i Sarpsborg med adresse, telefon og nettside
+- Informasjon om laserbehandling og hårfjerning
+- Prisinformasjon og hva man kan forvente
+- FAQ om laserbehandling
+
+## Sarpsborg
+Sarpsborg er en by med ca. 60 000 innbyggere i Østfold fylke, en av Norges eldste byer langs Glomma. Sentrale steder: Sarpsborg sentrum, Tune, Skjeberg, Borge.
+
+## Kontakt
+Eier: HaraHorn | E-post: Hello@HaraHorn.com

@@ -1,0 +1,16 @@
+# LaserBærum.no
+
+## Hva er denne siden?
+LaserBærum.no er en oversiktsside over klinikker som tilbyr laserbehandling og hårfjerning i Bærum.
+
+## Innhold
+- Liste over anbefalte laserbehandlingsklinikker i Bærum med adresse, telefon og nettside
+- Informasjon om laserbehandling og hårfjerning
+- Prisinformasjon og hva man kan forvente
+- FAQ om laserbehandling
+
+## Bærum
+Bærum er en kommune med ca. 130 000 innbyggere i Akershus fylke, plassert vest for Oslo langs Oslofjorden. Sentrale steder: Sandvika, Bekkestua, Fornebu, Høvik.
+
+## Kontakt
+Eier: HaraHorn | E-post: Hello@HaraHorn.com
