@@ -13,7 +13,6 @@ from pathlib import Path
 NACE_KODER = {
     "96.220": "Skjønnhetspleie",
     "96.230": "Spa og badstue",
-    "86.210": "Legevirksomhet (estetikk)",
 }
 
 KOMMUNER = {

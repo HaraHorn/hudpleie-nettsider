@@ -35,18 +35,17 @@ Hver side har disse unike verdiene:
 - `SØKEORD` – f.eks. Botox, Hudpleie, Laser
 - `BY` – f.eks. Drammen, Oslo, Bergen
 - `DOMENE` – f.eks. BotoxDrammen.no
-- `ANTALL_KLINIKKER` – oppdateres fra Brønnøysund-data
-- `KLINIKKLISTE` – klinikkort generert fra data
+- `ANTALL_KLINIKKER` – alltid 5 (ekte klinikker) + 1 ledig
+- `KLINIKKLISTE` – 5 håndplukkede klinikker + 1 ledig annonseplass-kort
 
 ### Klinikkort-struktur (HTML-mal)
 ```html
 <div class="clinic-card">
   <div class="card-header">
     <div class="clinic-initials">XX</div>
-    <span class="verified-badge">✓ Registrert</span>
+    <span class="verified-badge verified-badge--ok">✓ Anbefalt</span>
   </div>
   <div class="clinic-name">KLINIKKNAVN</div>
-  <div class="clinic-orgnr">Org.nr: XXX XXX XXX</div>
   <div class="card-details">
     <div class="detail-row">📍 <span>ADRESSE</span></div>
     <div class="detail-row">📞 <span>TELEFON</span></div>
@@ -54,10 +53,26 @@ Hver side har disse unike verdiene:
   </div>
   <div class="services-row">
     <span class="service-tag">TJENESTE 1</span>
+    <span class="service-tag">TJENESTE 2</span>
+    <span class="service-tag">TJENESTE 3</span>
   </div>
   <div class="card-footer">
-    <button class="btn-primary">Se detaljer</button>
+    <a href="https://NETTSIDE" target="_blank" class="btn-primary">Besøk nettside</a>
     <button class="btn-secondary">Kart</button>
+  </div>
+</div>
+```
+
+### Ledig annonseplass-kort (siste slot)
+```html
+<div class="clinic-card clinic-card--available">
+  <div class="card-header">
+    <div class="clinic-initials">+</div>
+  </div>
+  <div class="clinic-name">Ledig annonseplass</div>
+  <p class="available-text">Driver du klinikk i [BY]? Vi har én ledig plass for en klinikk som ønsker å bli vist her.</p>
+  <div class="card-footer">
+    <a href="mailto:Hello@HaraHorn.com" class="btn-primary">Ta kontakt</a>
   </div>
 </div>
 ```
@@ -72,17 +87,31 @@ For å legge til en ny side (f.eks. BotoxBergen.no):
 1. Kopier en eksisterende mappe (f.eks. `botoxdrammen/`)
 2. Endre alle forekomster av "Drammen" → "Bergen" og "drammen" → "bergen"
 3. Oppdater canonical URL, og-tags, og Schema.org
-4. Oppdater klinikkdata
+4. Finn 5 ekte klinikker (se prosess nedenfor) og erstatt klinikkdata
+
+## Finn 5 klinikker til en ny side
+
+Hver ny side skal ha **5 ekte, relevante bedrifter + 1 ledig annonseplass** (slot 6).
+
+### Søkeprosess
+1. Søk Google: `[søkeord] [by] klinikk`, `[søkeord] [by] behandling`
+2. Sjekk 1881.no eller gulesider.no for adresse og telefon
+3. Bekreft at nettsiden er aktiv og at tjenesten faktisk tilbys
+
+### Krav til en klinikk for å bli listet
+- Har en fungerende nettside
+- Tilbyr den spesifikke tjenesten (ikke bare generell skjønnhetspleie)
+- Har adresse i den aktuelle byen (eller nær omegn)
+- For botox/fillers: behandling skal utføres av autorisert helsepersonell (lege, sykepleier)
+
+### Hva som oppdateres ved ny klinikk
+- Legg til kort i `clinics-section` (bruk kortmal ovenfor)
+- Oppdater `result-count` span til riktig antall
+- Oppdater hero-stat (`.stat-num` under «Klinikker listet»)
+- Legg til `LocalBusiness`-oppføring i Schema.org JSON-LD
 
 ## Skalering til nye bransjer
 Samme struktur kan brukes for andre bransjer. Bytt ut:
 - Søkeord (Botox/Hudpleie/Laser → Tannlege/Frisør/Negl osv.)
-- NACE-kode for Brønnøysund-spørringer
 - SEO-tekst og FAQ
-
-## Data fra Brønnøysundregistrene
-API: `https://data.brreg.no/enhetsregisteret/api/enheter`
-Relevante NACE-koder for hudpleie:
-- 96.022 – Skjønnhetspleie
-- 86.210 – Allmenn legevirksomhet (klinikker med medisinsk estetikk)
-Eksempel-spørring: `?naeringskode=96.022&kommunenummer=0602` (Drammen = 0602)
+- Finn 5 relevante klinikker via Google-søk (se prosess ovenfor)
