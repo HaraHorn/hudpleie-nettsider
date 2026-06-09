@@ -91,24 +91,33 @@ For å legge til en ny side (f.eks. BotoxBergen.no):
 
 ## Finn 5 klinikker til en ny side
 
-Hver ny side skal ha **5 ekte, relevante bedrifter + 1 ledig annonseplass** (slot 6).
+Hver ny side skal ha **5 ekte klinikker + 1 ledig annonseplass** (slot 6).
 
-### Søkeprosess
-1. Søk Google: `[søkeord] [by] klinikk`, `[søkeord] [by] behandling`
-2. Sjekk 1881.no eller gulesider.no for adresse og telefon
-3. Bekreft at nettsiden er aktiv og at tjenesten faktisk tilbys
+### Automatisk via Google Places API (anbefalt)
+```
+node scripts/hent_google_places.js <søkeord> <by>
+```
+Eksempel: `node scripts/hent_google_places.js botox bergen`
 
-### Krav til en klinikk for å bli listet
-- Har en fungerende nettside
-- Tilbyr den spesifikke tjenesten (ikke bare generell skjønnhetspleie)
-- Har adresse i den aktuelle byen (eller nær omegn)
-- For botox/fillers: behandling skal utføres av autorisert helsepersonell (lege, sykepleier)
+Scriptet søker Google Places, henter topp 5 resultater med navn/adresse/telefon/nettside og oppdaterer riktig HTML-fil automatisk. Krever `GOOGLE_PLACES_API_KEY` i `.env`-filen (se `.env.example`).
 
-### Hva som oppdateres ved ny klinikk
-- Legg til kort i `clinics-section` (bruk kortmal ovenfor)
-- Oppdater `result-count` span til riktig antall
-- Oppdater hero-stat (`.stat-num` under «Klinikker listet»)
-- Legg til `LocalBusiness`-oppføring i Schema.org JSON-LD
+**Forutsetning for API-nøkkel:**
+1. Gå til https://console.cloud.google.com/
+2. Aktiver Places API
+3. Opprett API-nøkkel under Credentials
+4. Lagre som `.env`: `GOOGLE_PLACES_API_KEY=din_nøkkel`
+
+### HTML-markører (må finnes i nye sider)
+Klinikkgrid-innholdet må ha disse markørene for at scriptet skal fungere:
+```html
+<!-- KLINIKKER START -->
+  ... klinikkort ...
+<!-- KLINIKKER SLUTT -->
+```
+
+### Hva som oppdateres automatisk av scriptet
+- Klinikkortene mellom markørene
+- `result-count` span med antall klinikker funnet
 
 ## Skalering til nye bransjer
 Samme struktur kan brukes for andre bransjer. Bytt ut:
