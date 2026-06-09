@@ -37,6 +37,7 @@ Hver side har disse unike verdiene:
 - `DOMENE` – f.eks. BotoxDrammen.no
 - `ANTALL_KLINIKKER` – alltid 5 (ekte klinikker) + 1 ledig
 - `KLINIKKLISTE` – 5 håndplukkede klinikker + 1 ledig annonseplass-kort
+- `BY_INTRO` – unikt avsnitt med befolkningstall, fylke, geografi og sentrale bydeler (skiller siden fra andre byer med samme søkeord)
 
 ### Klinikkort-struktur (HTML-mal)
 ```html
@@ -78,16 +79,22 @@ Hver side har disse unike verdiene:
 ```
 
 ## SEO-regler
-- Hver side MÅ ha: <title>, <meta description>, <link rel="canonical">, Schema.org JSON-LD
+- Hver side MÅ ha: `<title>`, `<meta description>`, `<link rel="canonical">`, Schema.org JSON-LD (WebPage + FAQPage), `<meta property="og:image">`
 - H1 skal inneholde søkeord + bynavn
 - Seksjonene `seo-section` og `faq-section` er kritiske for SEO – ikke fjern dem
+- `seo-section` skal starte med et `<p class="city-intro">` med unik by-info (innbyggertall, fylke, bydeler)
+- `sitemap.xml` og `robots.txt` MÅ opprettes i sidens mappe for nye sider
+- `dateModified` i WebPage JSON-LD skal oppdateres ved innholdsendringer
 
 ## Nye sider
 For å legge til en ny side (f.eks. BotoxBergen.no):
 1. Kopier en eksisterende mappe (f.eks. `botoxdrammen/`)
 2. Endre alle forekomster av "Drammen" → "Bergen" og "drammen" → "bergen"
-3. Oppdater canonical URL, og-tags, og Schema.org
-4. Finn 5 ekte klinikker (se prosess nedenfor) og erstatt klinikkdata
+3. Oppdater canonical URL, og:image, og Schema.org (inkl. dateModified)
+4. Oppdater `BY_INTRO`-avsnittet med Bergens innbyggertall, fylke og bydeler
+5. Finn 5 ekte klinikker (se prosess nedenfor) og erstatt klinikkdata
+6. Oppdater `sitemap.xml` med ny URL og `robots.txt` med nytt domene
+7. Sjekk alle sider for skrivefeil før push
 
 ## Finn 5 klinikker til en ny side
 
