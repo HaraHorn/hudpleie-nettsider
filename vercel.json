@@ -1,9 +1,1331 @@
 {
   "version": 2,
   "builds": [
-    { "src": "botoxdrammen/index.html", "use": "@vercel/static" },
-    { "src": "hudpleiedrammen/index.html", "use": "@vercel/static" },
-    { "src": "laserdrammen/index.html", "use": "@vercel/static" },
-    { "src": "_shared/**", "use": "@vercel/static" }
+    {
+      "src": "_shared/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "botoxdrammen/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleiedrammen/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "laserdrammen/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "botoxasker/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleieasker/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "laserasker/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "botoxbergen/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleiebergen/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "laserbergen/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "botoxstavanger/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleiestavanger/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "laserstavanger/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "botoxtrondheim/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleietrondheim/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "lasertrondheim/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "botoxbærum/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleiebærum/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "laserbærum/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "botoxtromsø/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleietromsø/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "lasertromsø/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "botoxfredrikstad/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleiefredrikstad/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "laserfredrikstad/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "botoxkristiansand/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleiekristiansand/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "laserkristiansand/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "botoxsarpsborg/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleiesarpsborg/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "lasersarpsborg/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/botoxdrammen/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxdrammen.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxdrammen/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxdrammen.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxdrammen/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxdrammen.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxdrammen/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxdrammen.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleiedrammen/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiedrammen.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleiedrammen/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiedrammen.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleiedrammen/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiedrammen.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleiedrammen/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiedrammen.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/laserdrammen/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserdrammen.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/laserdrammen/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserdrammen.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/laserdrammen/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserdrammen.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/laserdrammen/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserdrammen.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/botoxasker/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxasker.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxasker/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxasker.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxasker/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxasker.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxasker/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxasker.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleieasker/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleieasker.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleieasker/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleieasker.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleieasker/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleieasker.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleieasker/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleieasker.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/laserasker/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserasker.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/laserasker/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserasker.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/laserasker/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserasker.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/laserasker/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserasker.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/botoxbergen/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxbergen.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxbergen/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxbergen.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxbergen/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxbergen.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxbergen/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxbergen.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleiebergen/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiebergen.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleiebergen/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiebergen.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleiebergen/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiebergen.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleiebergen/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiebergen.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/laserbergen/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserbergen.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/laserbergen/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserbergen.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/laserbergen/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserbergen.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/laserbergen/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserbergen.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/botoxstavanger/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxstavanger.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxstavanger/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxstavanger.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxstavanger/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxstavanger.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxstavanger/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxstavanger.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleiestavanger/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiestavanger.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleiestavanger/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiestavanger.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleiestavanger/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiestavanger.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleiestavanger/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiestavanger.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/laserstavanger/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserstavanger.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/laserstavanger/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserstavanger.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/laserstavanger/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserstavanger.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/laserstavanger/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserstavanger.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/botoxtrondheim/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxtrondheim.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxtrondheim/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxtrondheim.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxtrondheim/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxtrondheim.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxtrondheim/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxtrondheim.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleietrondheim/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleietrondheim.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleietrondheim/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleietrondheim.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleietrondheim/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleietrondheim.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleietrondheim/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleietrondheim.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/lasertrondheim/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "lasertrondheim.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/lasertrondheim/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "lasertrondheim.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/lasertrondheim/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "lasertrondheim.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/lasertrondheim/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "lasertrondheim.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/botoxbærum/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--botoxbrum-l3a.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxbærum/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--botoxbrum-l3a.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxbærum/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--botoxbrum-l3a.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxbærum/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--botoxbrum-l3a.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleiebærum/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--hudpleiebrum-fdb.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleiebærum/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--hudpleiebrum-fdb.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleiebærum/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--hudpleiebrum-fdb.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleiebærum/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--hudpleiebrum-fdb.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/laserbærum/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--laserbrum-l3a.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/laserbærum/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--laserbrum-l3a.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/laserbærum/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--laserbrum-l3a.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/laserbærum/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--laserbrum-l3a.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/botoxtromsø/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--botoxtroms-9cb.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxtromsø/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--botoxtroms-9cb.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxtromsø/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--botoxtroms-9cb.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxtromsø/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--botoxtroms-9cb.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleietromsø/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--hudpleietroms-nnb.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleietromsø/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--hudpleietroms-nnb.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleietromsø/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--hudpleietroms-nnb.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleietromsø/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--hudpleietroms-nnb.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/lasertromsø/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--lasertroms-9cb.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/lasertromsø/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--lasertroms-9cb.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/lasertromsø/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--lasertroms-9cb.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/lasertromsø/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "xn--lasertroms-9cb.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/botoxfredrikstad/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxfredrikstad.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxfredrikstad/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxfredrikstad.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxfredrikstad/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxfredrikstad.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxfredrikstad/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxfredrikstad.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleiefredrikstad/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiefredrikstad.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleiefredrikstad/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiefredrikstad.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleiefredrikstad/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiefredrikstad.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleiefredrikstad/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiefredrikstad.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/laserfredrikstad/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserfredrikstad.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/laserfredrikstad/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserfredrikstad.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/laserfredrikstad/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserfredrikstad.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/laserfredrikstad/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserfredrikstad.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/botoxkristiansand/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxkristiansand.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxkristiansand/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxkristiansand.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxkristiansand/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxkristiansand.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxkristiansand/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxkristiansand.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleiekristiansand/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiekristiansand.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleiekristiansand/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiekristiansand.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleiekristiansand/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiekristiansand.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleiekristiansand/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiekristiansand.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/laserkristiansand/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserkristiansand.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/laserkristiansand/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserkristiansand.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/laserkristiansand/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserkristiansand.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/laserkristiansand/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "laserkristiansand.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/botoxsarpsborg/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxsarpsborg.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxsarpsborg/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxsarpsborg.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxsarpsborg/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxsarpsborg.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxsarpsborg/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "botoxsarpsborg.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleiesarpsborg/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiesarpsborg.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleiesarpsborg/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiesarpsborg.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleiesarpsborg/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiesarpsborg.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleiesarpsborg/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "hudpleiesarpsborg.no"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/lasersarpsborg/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "lasersarpsborg.no"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/lasersarpsborg/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "lasersarpsborg.no"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/lasersarpsborg/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "lasersarpsborg.no"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/lasersarpsborg/llms.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "lasersarpsborg.no"
+        }
+      ]
+    }
   ]
 }
