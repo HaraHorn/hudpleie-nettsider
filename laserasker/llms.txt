@@ -1,0 +1,22 @@
+﻿# LaserAsker.no
+
+> Gratis oversikt over klinikker i Asker som tilbyr laserbehandling, hårfjerning og hudforynging.
+
+LaserAsker.no hjelper deg å finne laserklinikker i Asker og omegn. Siden lister adresse, telefon og nettside for hver klinikk.
+
+## Klinikker
+- 3 laserklinikker i Asker og omegn
+- Inkluderer bl.a. Asker Laserklinikk, Velbehag Medisinsk Hudklinikk og Skin Clinic Asker
+- Informasjon hentet fra Google Places
+
+## Tjenester
+Klinikkene tilbyr permanent hårfjerning, hudforynging, IPL-behandling, pigmentbehandling, tatoveringsfjerning og karfjerning med laser.
+
+## By
+Asker, Akershus, Norge. Ca. 100 000 innbyggere. Sentrale bydeler: Asker sentrum og Heggedal.
+
+## Om siden
+- Gratis å bruke for alle besøkende
+- Eier: HaraHorn, Org.nr 915 158 323
+- Kontakt: Hello@HaraHorn.com
+- Se også: BotoxAsker.no, HudpleieAsker.no

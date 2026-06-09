@@ -1,0 +1,22 @@
+﻿# BotoxAsker.no
+
+> Gratis oversikt over klinikker i Asker som tilbyr botox, fillers og estetisk medisin.
+
+BotoxAsker.no hjelper deg å finne botox- og fillerklinikker i Asker og omegn med autorisert helsepersonell. Siden lister adresse, telefon og nettside for hver klinikk.
+
+## Klinikker
+- 5 botox- og fillerklinikker i Asker og omegn
+- Inkluderer bl.a. M clinic, Velbehag Medisinsk Hudklinikk, Skin Clinic Asker, Mias Klinikk og Kosmetisk sykepleier Linda Larsen
+- Informasjon hentet fra Google Places
+
+## Tjenester
+Klinikkene tilbyr botox-injeksjoner, fillers og estetisk medisin. Behandlingene skal ifølge norsk lov utføres av autorisert helsepersonell (leger, tannleger eller spesialsykepleiere).
+
+## By
+Asker, Akershus, Norge. Ca. 100 000 innbyggere. Sentrale bydeler: Asker sentrum og Heggedal.
+
+## Om siden
+- Gratis å bruke for alle besøkende
+- Eier: HaraHorn, Org.nr 915 158 323
+- Kontakt: Hello@HaraHorn.com
+- Se også: HudpleieAsker.no, LaserAsker.no
