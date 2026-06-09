@@ -1,0 +1,9 @@
+# HudpleieArendal.no
+
+Nettsted: https://hudpleiearendal.no/
+Søkeord: hudpleie Arendal
+By: Arendal
+Fylke: Agder
+
+Dette er en oversiktsside over hudpleiesteder i Arendal og omegn.
+Siden inneholder en liste over anbefalte klinikker med adresse, telefon og nettside.

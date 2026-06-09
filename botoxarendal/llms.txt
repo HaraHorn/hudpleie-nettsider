@@ -1,0 +1,9 @@
+# BotoxArendal.no
+
+Nettsted: https://botoxarendal.no/
+Søkeord: botox Arendal
+By: Arendal
+Fylke: Agder
+
+Dette er en oversiktsside over botox-klinikker i Arendal og omegn.
+Siden inneholder en liste over anbefalte klinikker med adresse, telefon og nettside.

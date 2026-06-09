@@ -1,0 +1,9 @@
+# BotoxOslo.com
+
+Nettsted: https://botoxoslo.com/
+Søkeord: botox Oslo
+By: Oslo
+Fylke: Oslo fylke
+
+Dette er en oversiktsside over botox-klinikker i Oslo og omegn.
+Siden inneholder en liste over anbefalte klinikker med adresse, telefon og nettside.

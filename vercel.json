@@ -112,6 +112,30 @@
     {
       "src": "lasersarpsborg/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "botoxoslo/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleieoslo/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "laseroslo/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "botoxarendal/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleiearendal/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "laserarendal/**",
+      "use": "@vercel/static"
     }
   ],
   "rewrites": [
@@ -1194,6 +1218,126 @@
           "value": "lasersarpsborg.no"
         }
       ]
+    },
+    {
+      "source": "/",
+      "destination": "/botoxoslo/index.html",
+      "has": [{ "type": "host", "value": "botoxoslo.com" }]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxoslo/sitemap.xml",
+      "has": [{ "type": "host", "value": "botoxoslo.com" }]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxoslo/robots.txt",
+      "has": [{ "type": "host", "value": "botoxoslo.com" }]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxoslo/llms.txt",
+      "has": [{ "type": "host", "value": "botoxoslo.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleieoslo/index.html",
+      "has": [{ "type": "host", "value": "hudpleieoslo.com" }]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleieoslo/sitemap.xml",
+      "has": [{ "type": "host", "value": "hudpleieoslo.com" }]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleieoslo/robots.txt",
+      "has": [{ "type": "host", "value": "hudpleieoslo.com" }]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleieoslo/llms.txt",
+      "has": [{ "type": "host", "value": "hudpleieoslo.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/laseroslo/index.html",
+      "has": [{ "type": "host", "value": "laseroslo.com" }]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/laseroslo/sitemap.xml",
+      "has": [{ "type": "host", "value": "laseroslo.com" }]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/laseroslo/robots.txt",
+      "has": [{ "type": "host", "value": "laseroslo.com" }]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/laseroslo/llms.txt",
+      "has": [{ "type": "host", "value": "laseroslo.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/botoxarendal/index.html",
+      "has": [{ "type": "host", "value": "botoxarendal.no" }]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxarendal/sitemap.xml",
+      "has": [{ "type": "host", "value": "botoxarendal.no" }]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxarendal/robots.txt",
+      "has": [{ "type": "host", "value": "botoxarendal.no" }]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxarendal/llms.txt",
+      "has": [{ "type": "host", "value": "botoxarendal.no" }]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleiearendal/index.html",
+      "has": [{ "type": "host", "value": "hudpleiearendal.no" }]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleiearendal/sitemap.xml",
+      "has": [{ "type": "host", "value": "hudpleiearendal.no" }]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleiearendal/robots.txt",
+      "has": [{ "type": "host", "value": "hudpleiearendal.no" }]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleiearendal/llms.txt",
+      "has": [{ "type": "host", "value": "hudpleiearendal.no" }]
+    },
+    {
+      "source": "/",
+      "destination": "/laserarendal/index.html",
+      "has": [{ "type": "host", "value": "laserarendal.no" }]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/laserarendal/sitemap.xml",
+      "has": [{ "type": "host", "value": "laserarendal.no" }]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/laserarendal/robots.txt",
+      "has": [{ "type": "host", "value": "laserarendal.no" }]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/laserarendal/llms.txt",
+      "has": [{ "type": "host", "value": "laserarendal.no" }]
     }
   ]
 }

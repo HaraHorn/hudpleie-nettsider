@@ -1,0 +1,9 @@
+# LaserOslo.com
+
+Nettsted: https://laseroslo.com/
+Søkeord: laser Oslo, laserbehandling Oslo
+By: Oslo
+Fylke: Oslo fylke
+
+Dette er en oversiktsside over laserklinikker i Oslo og omegn.
+Siden inneholder en liste over anbefalte klinikker med adresse, telefon og nettside.

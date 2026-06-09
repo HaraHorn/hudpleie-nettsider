@@ -1,0 +1,9 @@
+# LaserArendal.no
+
+Nettsted: https://laserarendal.no/
+Søkeord: laser Arendal, laserbehandling Arendal
+By: Arendal
+Fylke: Agder
+
+Dette er en oversiktsside over laserklinikker i Arendal og omegn.
+Siden inneholder en liste over anbefalte klinikker med adresse, telefon og nettside.

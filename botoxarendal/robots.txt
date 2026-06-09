@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://botoxarendal.no/sitemap.xml
