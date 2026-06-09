@@ -156,7 +156,7 @@
 
 <script>
 (function(){
-  var ID='G-TODO_LASERARENDAL';
+  var ID='G-0ZCZE7KZSE';
   function loadGA(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config',ID);document.querySelectorAll('a[data-klinikk]').forEach(function(el){el.addEventListener('click',function(){gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});});});}
   var consent=localStorage.getItem('hh_consent');var banner=document.getElementById('cookie-banner');
   if(consent==='yes'){loadGA();}else if(consent!=='no'){banner.style.display='flex';}
