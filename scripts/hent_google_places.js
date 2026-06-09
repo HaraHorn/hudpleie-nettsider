@@ -47,12 +47,12 @@ function getInitials(name) {
     .map(w => w[0].toUpperCase()).join('');
 }
 
-async function textSearch(query) {
+async function textSearch(query, maxResultCount = 5) {
   const body = JSON.stringify({
     textQuery: query,
     languageCode: 'no',
     regionCode: 'NO',
-    maxResultCount: 5,
+    maxResultCount,
   });
 
   const res = await httpsRequest({
@@ -153,17 +153,37 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`\nSøker Google Places (New): "${sokeord} klinikk ${by}"...`);
-  const results = await textSearch(`${sokeord} klinikk ${by}`);
+  const FALLBACK_QUERIES = [
+    `${sokeord} klinikk ${by}`,
+    `${sokeord} behandling ${by}`,
+    `${sokeord} ${by} og omegn`,
+    `${sokeord} ${by}`,
+  ];
 
-  if (results.length === 0) {
+  const seenIds = new Set();
+  const allResults = [];
+
+  for (const query of FALLBACK_QUERIES) {
+    if (allResults.length >= 5) break;
+    console.log(`\nSøker Google Places (New): "${query}"...`);
+    const results = await textSearch(query, 5 - allResults.length);
+    const nyeTreff = results.filter(r => !seenIds.has(r.name));
+    nyeTreff.forEach(r => seenIds.add(r.name));
+    allResults.push(...nyeTreff);
+    if (allResults.length >= 5) break;
+    if (nyeTreff.length > 0 && allResults.length < 5) {
+      console.log(`  Fant ${nyeTreff.length} treff, prøver bredere søk for å nå 5...`);
+    }
+  }
+
+  if (allResults.length === 0) {
     console.log('Ingen resultater funnet.');
     process.exit(0);
   }
 
-  console.log(`Fant ${results.length} treff. Henter detaljer...\n`);
+  console.log(`\nFant ${allResults.length} unike treff totalt. Henter detaljer...\n`);
   const places = [];
-  for (const r of results) {
+  for (const r of allResults) {
     const details = await getDetails(r.name);
     places.push(details);
     console.log(`  ✓ ${details.displayName?.text}`);
