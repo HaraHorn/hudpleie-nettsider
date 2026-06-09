@@ -104,6 +104,8 @@ function buildClinicCard(place, tags) {
   const cta      = web
     ? `<a href="${web}" target="_blank" class="btn-primary" data-klinikk="${name}">Besøk nettside</a>`
     : `<button class="btn-primary">Se mer</button>`;
+  const mapsQ    = encodeURIComponent(`${name} ${addr}`).replace(/%20/g, '+');
+  const kartLink = `<a href="https://maps.google.com/?q=${mapsQ}" target="_blank" class="btn-secondary">Kart</a>`;
 
   return `      <div class="clinic-card">
         <div class="card-header">
@@ -117,7 +119,7 @@ function buildClinicCard(place, tags) {
         </div>
         <div class="card-footer">
           ${cta}
-          <button class="btn-secondary">Kart</button>
+          ${kartLink}
         </div>
       </div>`;
 }
