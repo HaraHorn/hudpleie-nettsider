@@ -1,11 +1,11 @@
 # BotoxDrammen.no
 
-> Gratis oversikt over klinikker i Drammen som tilbyr botox og estetisk medisin.
+> Gratis oversikt over klinikker i Drammen som tilbyr botox, fillers og estetisk medisin.
 
-BotoxDrammen.no hjelper deg å finne botox-klinikker i Drammen og omegn med autorisert helsepersonell. Siden lister adresse, telefon og nettside for hver klinikk.
+BotoxDrammen.no hjelper deg å finne botox- og fillerklinikker i Drammen og omegn med autorisert helsepersonell. Siden lister adresse, telefon og nettside for hver klinikk.
 
 ## Klinikker
-- 5 botox-klinikker i Drammen og omegn
+- 5 botox- og fillerklinikker i Drammen og omegn
 - Inkluderer bl.a. M clinic, Velbehag Medisinsk Hudklinikk, Skin Clinic Drammen, Mias Klinikk og Kosmetisk sykepleier Linda Larsen
 - Informasjon hentet fra Google Places
 
