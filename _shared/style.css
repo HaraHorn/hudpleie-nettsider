@@ -122,14 +122,15 @@ a.btn-secondary{display:inline-flex;align-items:center;justify-content:center;te
 .see-also-links a{font-size:14px;color:var(--accent);font-weight:500;text-decoration:underline;text-underline-offset:3px}
 
 /* COOKIE BANNER */
-#cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--text-dark);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:999;border-top:2px solid rgba(139,110,78,0.4)}
-#cookie-banner p{margin:0;font-size:13px;color:rgba(255,255,255,0.7);flex:1}
-.cookie-buttons{display:flex;gap:0.5rem;flex-shrink:0}
-.cookie-btn-accept{background:var(--accent);color:var(--white);border:none;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.15s}
+#cookie-banner{position:fixed;inset:0;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;z-index:999;padding:1rem}
+.cookie-card{background:var(--white);border-radius:16px;padding:2rem 2.5rem;max-width:460px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,0.35);display:flex;flex-direction:column;gap:1.25rem;align-items:center;text-align:center}
+.cookie-card p{margin:0;font-size:15px;color:var(--text-dark);line-height:1.6}
+.cookie-buttons{display:flex;gap:0.75rem;flex-shrink:0}
+.cookie-btn-accept{background:var(--accent);color:var(--white);border:none;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.15s}
 .cookie-btn-accept:hover{background:var(--accent-light)}
-.cookie-btn-decline{background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.2);padding:8px 18px;border-radius:8px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:color 0.15s}
-.cookie-btn-decline:hover{color:rgba(255,255,255,0.85)}
-@media(max-width:600px){#cookie-banner{flex-direction:column;align-items:flex-start}}
+.cookie-btn-decline{background:transparent;color:var(--text-mid);border:1px solid var(--border);padding:10px 24px;border-radius:8px;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:color 0.15s}
+.cookie-btn-decline:hover{color:var(--text-dark)}
+@media(max-width:480px){.cookie-card{padding:1.5rem}.cookie-buttons{flex-direction:column;width:100%}.cookie-btn-accept,.cookie-btn-decline{width:100%;text-align:center}}
 
 /* RESPONSIVE */
 @media(max-width:768px){
