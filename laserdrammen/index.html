@@ -122,7 +122,7 @@
           <span class="service-tag">Hudforynging</span>
         </div>
         <div class="card-footer">
-          <a href="https://drammenlaserklinikk.no/" target="_blank" class="btn-primary">Besøk nettside</a>
+          <a href="https://drammenlaserklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Drammen Laserklinikk">Besøk nettside</a>
           <button class="btn-secondary">Kart</button>
         </div>
       </div>
@@ -143,7 +143,7 @@
           <span class="service-tag">Hudforynging</span>
         </div>
         <div class="card-footer">
-          <a href="http://velbehagklinikk.no/" target="_blank" class="btn-primary">Besøk nettside</a>
+          <a href="http://velbehagklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Velbehag Medisinsk Hudklinikk">Besøk nettside</a>
           <button class="btn-secondary">Kart</button>
         </div>
       </div>
@@ -164,7 +164,7 @@
           <span class="service-tag">Hudforynging</span>
         </div>
         <div class="card-footer">
-          <a href="http://www.hudsykepleieren.no/" target="_blank" class="btn-primary">Besøk nettside</a>
+          <a href="http://www.hudsykepleieren.no/" target="_blank" class="btn-primary" data-klinikk="Skin Clinic Drammen">Besøk nettside</a>
           <button class="btn-secondary">Kart</button>
         </div>
       </div>
@@ -254,6 +254,50 @@
 <footer>
   <p>© 2025 LaserDrammen.no &nbsp;·&nbsp; Org.nr: 915 158 323 &nbsp;·&nbsp; <a href="mailto:Hello@HaraHorn.com">Hello@HaraHorn.com</a></p>
 </footer>
+
+
+<div id="cookie-banner" style="display:none">
+  <p>Vi bruker informasjonskapsler for å analysere trafikk og forbedre tjenesten.</p>
+  <div class="cookie-buttons">
+    <button id="cookie-accept" class="cookie-btn-accept">Godta</button>
+    <button id="cookie-decline" class="cookie-btn-decline">Avslå</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var ID='G-73Y93ZB3M3';
+  function loadGA(){
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id='+ID;
+    document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag;
+    gtag('js',new Date());
+    gtag('config',ID);
+    document.querySelectorAll('a[data-klinikk]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+  }
+  var consent=localStorage.getItem('hh_consent');
+  var banner=document.getElementById('cookie-banner');
+  if(consent==='yes'){loadGA();}
+  else if(consent!=='no'){banner.style.display='flex';}
+  document.getElementById('cookie-accept').addEventListener('click',function(){
+    localStorage.setItem('hh_consent','yes');
+    banner.style.display='none';
+    loadGA();
+  });
+  document.getElementById('cookie-decline').addEventListener('click',function(){
+    localStorage.setItem('hh_consent','no');
+    banner.style.display='none';
+  });
+})();
+</script>
 
 </body>
 </html>

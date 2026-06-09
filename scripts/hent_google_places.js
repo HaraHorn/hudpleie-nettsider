@@ -102,7 +102,7 @@ function buildClinicCard(place, tags) {
   const webRow   = web   ? `\n          <div class="detail-row">🌐 <span>${displayWeb}</span></div>` : '';
   const tagHtml  = tags.map(t => `<span class="service-tag">${t}</span>`).join('\n          ');
   const cta      = web
-    ? `<a href="${web}" target="_blank" class="btn-primary">Besøk nettside</a>`
+    ? `<a href="${web}" target="_blank" class="btn-primary" data-klinikk="${name}">Besøk nettside</a>`
     : `<button class="btn-primary">Se mer</button>`;
 
   return `      <div class="clinic-card">
