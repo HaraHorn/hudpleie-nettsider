@@ -34,10 +34,6 @@
       "use": "@vercel/static"
     },
     {
-      "src": "hudpleiebergen/**",
-      "use": "@vercel/static"
-    },
-    {
       "src": "laserbergen/**",
       "use": "@vercel/static"
     },
@@ -51,14 +47,6 @@
     },
     {
       "src": "laserstavanger/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "botoxtrondheim/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "hudpleietrondheim/**",
       "use": "@vercel/static"
     },
     {
@@ -409,46 +397,6 @@
     },
     {
       "source": "/",
-      "destination": "/hudpleiebergen/index.html",
-      "has": [
-        {
-          "type": "host",
-          "value": "hudpleiebergen.no"
-        }
-      ]
-    },
-    {
-      "source": "/sitemap.xml",
-      "destination": "/hudpleiebergen/sitemap.xml",
-      "has": [
-        {
-          "type": "host",
-          "value": "hudpleiebergen.no"
-        }
-      ]
-    },
-    {
-      "source": "/robots.txt",
-      "destination": "/hudpleiebergen/robots.txt",
-      "has": [
-        {
-          "type": "host",
-          "value": "hudpleiebergen.no"
-        }
-      ]
-    },
-    {
-      "source": "/llms.txt",
-      "destination": "/hudpleiebergen/llms.txt",
-      "has": [
-        {
-          "type": "host",
-          "value": "hudpleiebergen.no"
-        }
-      ]
-    },
-    {
-      "source": "/",
       "destination": "/laserbergen/index.html",
       "has": [
         {
@@ -604,86 +552,6 @@
         {
           "type": "host",
           "value": "laserstavanger.no"
-        }
-      ]
-    },
-    {
-      "source": "/",
-      "destination": "/botoxtrondheim/index.html",
-      "has": [
-        {
-          "type": "host",
-          "value": "botoxtrondheim.no"
-        }
-      ]
-    },
-    {
-      "source": "/sitemap.xml",
-      "destination": "/botoxtrondheim/sitemap.xml",
-      "has": [
-        {
-          "type": "host",
-          "value": "botoxtrondheim.no"
-        }
-      ]
-    },
-    {
-      "source": "/robots.txt",
-      "destination": "/botoxtrondheim/robots.txt",
-      "has": [
-        {
-          "type": "host",
-          "value": "botoxtrondheim.no"
-        }
-      ]
-    },
-    {
-      "source": "/llms.txt",
-      "destination": "/botoxtrondheim/llms.txt",
-      "has": [
-        {
-          "type": "host",
-          "value": "botoxtrondheim.no"
-        }
-      ]
-    },
-    {
-      "source": "/",
-      "destination": "/hudpleietrondheim/index.html",
-      "has": [
-        {
-          "type": "host",
-          "value": "hudpleietrondheim.no"
-        }
-      ]
-    },
-    {
-      "source": "/sitemap.xml",
-      "destination": "/hudpleietrondheim/sitemap.xml",
-      "has": [
-        {
-          "type": "host",
-          "value": "hudpleietrondheim.no"
-        }
-      ]
-    },
-    {
-      "source": "/robots.txt",
-      "destination": "/hudpleietrondheim/robots.txt",
-      "has": [
-        {
-          "type": "host",
-          "value": "hudpleietrondheim.no"
-        }
-      ]
-    },
-    {
-      "source": "/llms.txt",
-      "destination": "/hudpleietrondheim/llms.txt",
-      "has": [
-        {
-          "type": "host",
-          "value": "hudpleietrondheim.no"
         }
       ]
     },
