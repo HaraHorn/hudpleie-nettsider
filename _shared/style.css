@@ -18,6 +18,9 @@
   --white:#FFFFFF;
   --green-ok:#2D6A4F;
   --green-bg:#EDF7F1;
+  --verified:#B8860B;
+  --verified-bg:#FDF8EE;
+  --verified-border:#D4A855;
 }
 
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.6}
@@ -109,6 +112,15 @@ footer a:hover{color:var(--accent-light)}
 .clinic-card--available{border:2px dashed var(--border);background:var(--warm-off)}
 .clinic-card--available .clinic-initials{background:transparent;border:2px dashed var(--accent-light);color:var(--accent-light);font-size:22px;font-family:'DM Sans',sans-serif;font-weight:300}
 .available-text{font-size:14px;color:var(--text-soft);line-height:1.65;margin:0.75rem 0 0}
+
+/* VERIFIED CLINIC */
+.clinic-card--verified{border:2px solid var(--verified-border);background:var(--verified-bg)}
+.clinic-card--verified:hover{border-color:var(--verified)}
+.clinic-card--verified .clinic-initials{background:#FEF3C7;color:var(--verified)}
+.verified-badge--verified{background:var(--verified);color:#fff}
+.verified-info{background:var(--verified-bg);border:1px solid var(--verified-border);border-radius:10px;padding:0.85rem 1.1rem;margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:0.6rem;font-size:13px;color:var(--text-mid);line-height:1.6}
+.verified-info-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.verified-info strong{color:var(--verified);font-weight:600}
 
 /* Link as primary button */
 a.btn-primary{display:flex;align-items:center;justify-content:center;text-decoration:none;flex:1;background:var(--text-dark);color:var(--white);padding:9px 0;border-radius:8px;font-size:13px;font-weight:500;transition:background 0.15s;font-family:'DM Sans',sans-serif}
