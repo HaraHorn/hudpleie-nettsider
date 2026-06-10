@@ -61,17 +61,17 @@ const SITES = [
 
 // Legg til nye hub-sider her når de opprettes
 const HUB_SITES = [
-  { display: 'Korean.no',    url: 'https://www.korean.no' },
-  { display: 'Antiaging.no', url: 'https://www.antiaging.no' },
+  { label: 'Koreansk hudpleie',       url: 'https://www.korean.no' },
+  { label: 'Anti-aging behandlinger', url: 'https://www.antiaging.no' },
 ];
 
 // ─── GENERERING ──────────────────────────────────────────────────────────────
 
-const KEYWORD_LABEL = {
-  botox:    'Botox i andre byer',
-  hudpleie: 'Hudpleie i andre byer',
-  laser:    'Laser i andre byer',
-};
+const KEYWORD_GROUPS = [
+  { keyword: 'botox',    label: 'Botox i Norge' },
+  { keyword: 'hudpleie', label: 'Hudpleie i Norge' },
+  { keyword: 'laser',    label: 'Laser i Norge' },
+];
 
 function buildLinksHtml(site) {
   const lines = [];
@@ -79,31 +79,21 @@ function buildLinksHtml(site) {
   lines.push('<section class="site-links">');
   lines.push('  <div class="site-links-inner">');
 
-  // Gruppe 1: samme søkeord, andre byer (kun aktive, ikke seg selv)
-  const sameTopic = SITES.filter(s => s.active && s.keyword === site.keyword && s.folder !== site.folder);
-  if (sameTopic.length > 0) {
-    const label = KEYWORD_LABEL[site.keyword] || `${site.keyword} i andre byer`;
-    const links = sameTopic.map(s => `<a href="${s.url}">${s.display}</a>`).join('\n      ');
+  // Gruppe 1–3: alle søkeord × alle byer (kun aktive, ikke seg selv)
+  for (const group of KEYWORD_GROUPS) {
+    const sites = SITES.filter(s => s.active && s.keyword === group.keyword && s.folder !== site.folder);
+    if (sites.length === 0) continue;
+    const links = sites.map(s => `<a href="${s.url}">${s.display}</a>`).join('\n      ');
     lines.push('    <div class="site-links-group">');
-    lines.push(`      <span class="site-links-label">${label}:</span>`);
+    lines.push(`      <span class="site-links-label">${group.label}:</span>`);
     lines.push(`      ${links}`);
     lines.push('    </div>');
   }
 
-  // Gruppe 2: same by, andre søkeord (kun aktive, ikke seg selv)
-  const sameCity = SITES.filter(s => s.active && s.city === site.city && s.folder !== site.folder);
-  if (sameCity.length > 0) {
-    const links = sameCity.map(s => `<a href="${s.url}">${s.display}</a>`).join('\n      ');
-    lines.push('    <div class="site-links-group">');
-    lines.push(`      <span class="site-links-label">Andre behandlinger i ${site.city}:</span>`);
-    lines.push(`      ${links}`);
-    lines.push('    </div>');
-  }
-
-  // Gruppe 3: hub-sider (alltid)
+  // Hub-sider (alltid, synligere)
   if (HUB_SITES.length > 0) {
-    const links = HUB_SITES.map(s => `<a href="${s.url}">${s.display}</a>`).join('\n      ');
-    lines.push('    <div class="site-links-group">');
+    const links = HUB_SITES.map(s => `<a href="${s.url}" class="site-links-hub">${s.label}</a>`).join('\n      ');
+    lines.push('    <div class="site-links-group site-links-group--hub">');
     lines.push('      <span class="site-links-label">Se også:</span>');
     lines.push(`      ${links}`);
     lines.push('    </div>');

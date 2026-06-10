@@ -109,6 +109,8 @@ nav a:hover{color:var(--accent)}
 .site-links-label{font-size:11px;color:rgba(255,255,255,0.22);font-weight:500;text-transform:uppercase;letter-spacing:0.05em;white-space:nowrap}
 .site-links a{font-size:11px;color:rgba(255,255,255,0.28);text-decoration:none}
 .site-links a:hover{color:rgba(255,255,255,0.55)}
+.site-links-hub{font-size:12px;color:rgba(255,255,255,0.5);font-weight:500}
+.site-links-hub:hover{color:var(--accent-light)}
 
 /* FOOTER */
 footer{background:var(--text-dark);padding:2.5rem 2rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
