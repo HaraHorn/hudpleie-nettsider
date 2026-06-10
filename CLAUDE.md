@@ -86,6 +86,29 @@ Hver side har disse unike verdiene:
 - `sitemap.xml`, `robots.txt` og `llms.txt` MÅ opprettes i sidens mappe for nye sider
 - `dateModified` i WebPage JSON-LD skal oppdateres ved innholdsendringer
 
+## Lenkenett (SEO link ecosystem)
+
+Alle sider har en `<!-- LENKER START --> ... <!-- LENKER SLUTT -->`-seksjon rett over `<footer>` som lenker til:
+- Samme søkeord i andre byer (topical cluster)
+- Andre søkeord i samme by (city cluster)
+- Hub-sider: Korean.no, Antiaging.no (og fremtidige temaspesifikke sider)
+
+### Oppdater lenker etter endringer
+```
+node scripts/oppdater_lenker.js
+```
+Kjøres automatisk ved: nye sider, nye hub-sider, domener som aktiveres.
+
+### Legg til en ny hub-side (f.eks. Tannlege.no)
+Rediger `scripts/oppdater_lenker.js`, legg til i `HUB_SITES`:
+```js
+{ display: 'Tannlege.no', url: 'https://www.tannlege.no' },
+```
+Kjør deretter scriptet. Alle 36+ sider oppdateres automatisk.
+
+### Aktiver et domene som har vært inaktivt (f.eks. HudpleieBergen.no)
+Sett `active: true` for riktig entry i `SITES`-arrayen i scriptet, og kjør det på nytt.
+
 ## Nye sider
 For å legge til en ny side (f.eks. BotoxBergen.no):
 1. Kopier en eksisterende mappe (f.eks. `botoxdrammen/`)
@@ -94,7 +117,8 @@ For å legge til en ny side (f.eks. BotoxBergen.no):
 4. Oppdater `BY_INTRO`-avsnittet med Bergens innbyggertall, fylke og bydeler
 5. Finn 5 ekte klinikker (se prosess nedenfor) og erstatt klinikkdata
 6. Oppdater `sitemap.xml` med ny URL, `robots.txt` med nytt domene, og `llms.txt` med ny by/søkeord
-7. Sjekk alle sider for skrivefeil før push
+7. Legg til siden i `SITES`-arrayen i `scripts/oppdater_lenker.js` og kjør scriptet
+8. Sjekk alle sider for skrivefeil før push
 
 ## Finn 5 klinikker til en ny side
 
