@@ -62,7 +62,7 @@ const SITES = [
 // Legg til nye hub-sider her når de opprettes
 const HUB_SITES = [
   { label: 'Koreansk hudpleie',       url: 'https://www.korean.no' },
-  { label: 'Anti-aging behandlinger', url: 'https://www.antiaging.no' },
+  { label: 'Anti-Aging', url: 'https://www.antiaging.no' },
 ];
 
 // ─── GENERERING ──────────────────────────────────────────────────────────────
