@@ -58,6 +58,7 @@ nav a:hover{color:var(--accent)}
 .info-box{background:var(--white);border-radius:10px;padding:1.1rem 1.25rem;border:1px solid var(--border)}
 .info-box strong{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;display:block;margin-bottom:4px}
 .info-box p{font-size:14px;color:var(--text-mid)}
+.info-box p a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
 
 /* CLINIC LIST */
 .clinics-section{padding:4rem 2rem;background:var(--cream)}
