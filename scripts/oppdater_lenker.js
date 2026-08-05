@@ -73,6 +73,7 @@ const SITES = [
 const HUB_SITES = [
   { label: 'Koreansk hudpleie',       url: 'https://www.korean.no' },
   { label: 'Anti-Aging', url: 'https://www.antiaging.no' },
+  { label: 'HudpleierUtdanning.no', url: 'https://www.hudpleierutdanning.no' },
 ];
 
 // ─── GENERERING ──────────────────────────────────────────────────────────────

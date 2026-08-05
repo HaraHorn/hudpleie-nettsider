@@ -137,7 +137,7 @@ redigert, for å bekrefte at ingen glemte å kjøre scriptet.
 ### Legg til en ny hub-side (f.eks. Tannlege.no)
 Rediger `scripts/oppdater_lenker.js`, legg til i `HUB_SITES`:
 ```js
-{ display: 'Tannlege.no', url: 'https://www.tannlege.no' },
+{ label: 'Tannlege.no', url: 'https://www.tannlege.no' },
 ```
 Kjør deretter scriptet. Alle 36+ sider oppdateres automatisk.
 
