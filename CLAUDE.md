@@ -9,6 +9,8 @@ samme design og struktur, men har ulikt innhold basert på søkeord og by.
 hudpleie-nettsider/
 ├── _shared/
 │   └── style.css          ← FELLES CSS – endre her for å oppdatere alle sider
+├── _template/
+│   └── index.html         ← MAL for nye sider – se "Mal (template)" under
 ├── botoxdrammen/
 │   └── index.html         ← BotoxDrammen.no
 ├── hudpleiedrammen/
@@ -18,6 +20,27 @@ hudpleie-nettsider/
 ├── CLAUDE.md              ← Denne filen
 └── README.md
 ```
+
+## Mal (template)
+`_template/` inneholder en generisk, søkeord-nøytral versjon av en side
+(`index.html`, `sitemap.xml`, `robots.txt`, `llms.txt`) med plassholdere som
+`{{SØKEORD}}`, `{{søkeord}}`, `{{BY}}`, `{{by}}`, `{{DOMENE}}`, `{{domene_lower}}`,
+`{{DATO}}`, `{{ÅR}}` og `{{GA4_ID}}`. Den er utgangspunktet for **alle** nye sider
+(se "Nye sider" under) og skal alltid holdes generisk:
+
+- **Aldri** rediger `_template/` for å tilpasse den til én spesifikk by eller ett
+  spesifikt søkeord – da forsvinner poenget med en gjenbrukbar mal.
+- **Aldri** kopier lokale endringer fra en enkelt live-side (f.eks. en pris- eller
+  FAQ-justering du gjør på `botoxoslo/index.html`) tilbake til `_template/`. Lokale
+  endringer på navngitte sider skal kun påvirke den navngitte siden.
+- `_template/` er en helt vanlig mappe, ikke en symlink eller et include – den kan
+  fysisk ikke bli påvirket av redigeringer i andre mapper.
+- Understrek-prefikset (samme konvensjon som `_shared/`) gjør at `_template/`
+  automatisk ignoreres av `scripts/hent_klinikker.js` (hopper over mapper som
+  starter med `_` eller `.`) og aldri dukker opp i lenkenettet med mindre den
+  eksplisitt legges til i `SITES`-arrayet i `scripts/oppdater_lenker.js` (noe den
+  aldri skal gjøres). Den er heller ikke registrert i `vercel.json` og kan derfor
+  ikke publiseres ved et uhell.
 
 ## Regler for endringer
 
@@ -111,10 +134,14 @@ Sett `active: true` for riktig entry i `SITES`-arrayen i scriptet, og kjør det 
 
 ## Nye sider
 For å legge til en ny side (f.eks. BotoxBergen.no):
-1. Kopier en eksisterende mappe (f.eks. `botoxdrammen/`)
-2. Endre alle forekomster av "Drammen" → "Bergen" og "drammen" → "bergen"
+1. Kopier `_template/`-mappen (ikke en eksisterende live-side)
+2. Erstatt alle plassholdere (`{{SØKEORD}}`, `{{søkeord}}`, `{{BY}}`, `{{by}}`,
+   `{{DOMENE}}`, `{{domene_lower}}`, `{{DATO}}`, `{{ÅR}}`, `{{GA4_ID}}` osv.) med
+   riktige verdier for Botox/Bergen
 3. Oppdater canonical URL, og:image, og Schema.org (inkl. dateModified)
-4. Oppdater `BY_INTRO`-avsnittet med Bergens innbyggertall, fylke og bydeler
+4. Skriv `BY_INTRO`-avsnittet og resten av `seo-section`-innholdet (markert med
+   `[...]` i malen) med Bergens innbyggertall, fylke, bydeler og reelt
+   pris-/tjenesteinnhold
 5. Finn 5 ekte klinikker (se prosess nedenfor) og erstatt klinikkdata
 6. Oppdater `sitemap.xml` med ny URL, `robots.txt` med nytt domene, og `llms.txt` med ny by/søkeord
 7. Legg til siden i `SITES`-arrayen i `scripts/oppdater_lenker.js` og kjør scriptet
@@ -151,7 +178,8 @@ Klinikkgrid-innholdet må ha disse markørene for at scriptet skal fungere:
 - `result-count` span med antall klinikker funnet
 
 ## Skalering til nye bransjer
-Samme struktur kan brukes for andre bransjer. Bytt ut:
+Samme struktur kan brukes for andre bransjer. Start også her fra `_template/`
+(se "Mal (template)" over) og bytt ut:
 - Søkeord (Botox/Hudpleie/Laser → Tannlege/Frisør/Negl osv.)
 - SEO-tekst og FAQ
 - Finn 5 relevante klinikker via Google-søk (se prosess ovenfor)

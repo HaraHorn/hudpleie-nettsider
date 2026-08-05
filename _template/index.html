@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{SØKEORD}} {{BY}} – Finn de beste klinikkene | {{DOMENE}}</title>
+<meta name="description" content="Oversikt over klinikker i {{BY}} som tilbyr {{søkeord}}. Finn anbefalte {{søkeord}}steder i {{BY}} sentrum og omegn.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://{{domene_lower}}/">
+<link rel="icon" type="image/svg+xml" href="../_shared/favicon-{{søkeord}}.svg">
+<meta property="og:title" content="{{SØKEORD}} {{BY}} – Finn de beste klinikkene">
+<meta property="og:description" content="Oversikt over {{søkeord}}klinikker i {{BY}} og omegn.">
+<meta property="og:url" content="https://{{domene_lower}}/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://{{domene_lower}}/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{SØKEORD}} {{BY}}",
+  "description": "Oversikt over {{søkeord}}klinikker i {{BY}}",
+  "url": "https://{{domene_lower}}/",
+  "dateModified": "{{DATO}}"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvem kan utføre {{søkeord}}-behandling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sjekk alltid at klinikken kan dokumentere riktig fagbrev, autorisasjon eller annen relevant kompetanse for {{søkeord}}-behandling før du bestiller time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Er {{søkeord}}-behandling trygt for sensitiv hud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Informer klinikken om hudtypen din på forhånd. De fleste steder tilpasser behandlingen etter din hudtype og eventuelle følsomheter. En konsultasjon i forkant er alltid lurt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvor lang tid tar en {{søkeord}}-behandling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Varigheten avhenger av behandlingstype og omfang. Sjekk med klinikken hva som er normal behandlingstid for akkurat den behandlingen du ønsker."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er {{SØKEORD}}?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[Fyll inn en kort, konkret forklaring av hva {{søkeord}} er og hvilke behov behandlingen dekker.]"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Er klinikkene på listen aktive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vi oppdaterer oversikten jevnlig. Vi anbefaler alltid å kontakte klinikken direkte for å bekrefte åpningstider og tilgjengelighet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Koster det noe å bruke {{DOMENE}}?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nei, oversikten er helt gratis å bruke for alle besøkende."
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_shared/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">{{SØKEORD}}<span>{{BY}}</span>.no</div>
+    <nav>
+      <a href="#klinikker">Klinikker</a>
+      <a href="#om-{{søkeord}}">Om {{søkeord}}</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">{{BY}} &amp; omegn</div>
+    <h1>Finn de beste<br><em>{{søkeord}}klinikkene</em><br>i {{BY}}</h1>
+    <p class="hero-desc">Oversikt over klinikker i {{BY}} som tilbyr {{søkeord}}.</p>
+  </div>
+</section>
+
+<section class="clinics-section" id="klinikker">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>{{SØKEORD}}klinikker i {{BY}}</h2>
+      <span class="result-count">Viser 5 klinikker</span>
+    </div>
+    <div class="verified-info">
+      <span class="verified-info-icon">🛡️</span>
+      <span><strong>Verifisert:</strong> Klinikker merket som verifisert er klinikker vi har vært i direkte kontakt med og som har bekreftet at deres personale har riktig utdanning og er kvalifiserte til å levere tjenestene de tilbyr.</span>
+    </div>
+    <div class="clinic-grid">
+
+<!-- KLINIKKER START -->
+<!--
+  Kjør: node scripts/hent_google_places.js {{søkeord}} {{by}}
+  Scriptet finner 5 ekte klinikker og setter inn klinikkort her automatisk,
+  samt oppdaterer result-count over. La "Ledig annonseplass"-kortet nedenfor
+  stå igjen som siste kort (slot 6).
+-->
+
+      <div class="clinic-card clinic-card--available">
+        <div class="card-header">
+          <div class="clinic-initials">+</div>
+        </div>
+        <div class="clinic-name">Ledig annonseplass</div>
+        <p class="available-text">Driver du klinikk i {{BY}}? Vi har én ledig plass for en klinikk som ønsker å bli vist her.</p>
+        <div class="card-footer">
+          <a href="mailto:Hello@HaraHorn.com" class="btn-primary">Ta kontakt</a>
+        </div>
+      </div>
+
+      <!-- KLINIKKER SLUTT -->
+
+    </div>
+  </div>
+</section>
+
+<section class="seo-section" id="om-{{søkeord}}">
+  <div class="seo-inner">
+    <h2>{{SØKEORD}} i {{BY}} – alt du trenger å vite</h2>
+    <p class="city-intro">[BY_INTRO: skriv et unikt avsnitt om {{BY}} her – innbyggertall, fylke, geografi og sentrale bydeler. Skal skille denne siden fra andre byer med samme søkeord.]</p>
+    <p>[Skriv en generell innledning om {{søkeord}} i {{BY}} – hvorfor det er relevant, og hva slags tilbud man finner i byen.]</p>
+
+    <h3>Hva tilbyr {{søkeord}}klinikkene i {{BY}}?</h3>
+    <ul>
+      <li>[Tjeneste 1]</li>
+      <li>[Tjeneste 2]</li>
+      <li>[Tjeneste 3]</li>
+      <li>[Tjeneste 4]</li>
+      <li>[Tjeneste 5]</li>
+    </ul>
+
+    <h3>Hva koster {{søkeord}} i {{BY}}?</h3>
+    <p>[Skriv en prisliste/prisoversikt for de vanligste behandlingene, med realistiske kronebeløp.]</p>
+
+    <h3>Hvor ofte bør man ta {{søkeord}}-behandling?</h3>
+    <p>[Skriv generelle anbefalinger om intervaller mellom behandlinger.]</p>
+
+    <h3>Hva bør du tenke på når du velger {{søkeord}}sted i {{BY}}?</h3>
+    <p>[Skriv råd om hva man bør sjekke før man bestiller time – kompetanse, konsultasjon, produkter osv.]</p>
+
+    <h3>Kan man kombinere {{søkeord}} med andre behandlinger?</h3>
+    <p>[Skriv om vanlige kombinasjoner med andre behandlinger og eventuelle hensyn til rekkefølge/timing.]</p>
+
+    <div class="see-also">
+      <p>Se også</p>
+      <div class="see-also-links">
+        <a href="https://{{annen-søkeord-1}}{{by}}.no/">{{Annen søkeord 1}} {{BY}}</a>
+        <a href="https://{{annen-søkeord-2}}{{by}}.no/">{{Annen søkeord 2}} {{BY}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <h2>Ofte stilte spørsmål om {{søkeord}} i {{BY}}</h2>
+    <div class="faq-item">
+      <div class="faq-q">Hvem kan utføre {{søkeord}}-behandling?</div>
+      <div class="faq-a">Sjekk alltid at klinikken kan dokumentere riktig fagbrev, autorisasjon eller annen relevant kompetanse for {{søkeord}}-behandling før du bestiller time.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Er {{søkeord}}-behandling trygt for sensitiv hud?</div>
+      <div class="faq-a">Informer klinikken om hudtypen din på forhånd. De fleste steder tilpasser behandlingen etter din hudtype og eventuelle følsomheter. En konsultasjon i forkant er alltid lurt.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Hvor lang tid tar en {{søkeord}}-behandling?</div>
+      <div class="faq-a">Varigheten avhenger av behandlingstype og omfang. Sjekk med klinikken hva som er normal behandlingstid for akkurat den behandlingen du ønsker.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Hva er {{SØKEORD}}?</div>
+      <div class="faq-a">[Fyll inn en kort, konkret forklaring av hva {{søkeord}} er og hvilke behov behandlingen dekker.]</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Er klinikkene på listen aktive?</div>
+      <div class="faq-a">Vi oppdaterer oversikten jevnlig. Vi anbefaler alltid å kontakte klinikken direkte for å bekrefte åpningstider og tilgjengelighet.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Koster det noe å bruke {{DOMENE}}?</div>
+      <div class="faq-a">Nei, oversikten er helt gratis å bruke for alle besøkende.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LENKER START -->
+<!--
+  Dette avsnittet blir fullstendig overskrevet av: node scripts/oppdater_lenker.js
+  Kjør scriptet etter at siden er registrert i SITES-arrayet i
+  scripts/oppdater_lenker.js. Ikke rediger lenkene manuelt.
+-->
+<section class="site-links">
+  <div class="site-links-inner">
+    <div class="site-links-group">
+      <span class="site-links-label">Lenker fylles inn automatisk</span>
+    </div>
+  </div>
+</section>
+<!-- LENKER SLUTT -->
+<footer>
+  <p>© {{ÅR}} {{DOMENE}} &nbsp;·&nbsp; Org.nr: 915 158 323 &nbsp;·&nbsp; <a href="mailto:Hello@HaraHorn.com">Hello@HaraHorn.com</a></p>
+</footer>
+
+
+<div id="cookie-banner" style="display:none">
+    <div class="cookie-card">
+    <p>Vi bruker informasjonskapsler for å analysere trafikk og forbedre tjenesten.</p>
+  <div class="cookie-buttons">
+    <button id="cookie-accept" class="cookie-btn-accept">Godta</button>
+    <button id="cookie-decline" class="cookie-btn-decline">Avslå</button>
+  </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var ID='{{GA4_ID}}'; // VIKTIG: unik GA4-ID per side – ikke gjenbruk en annen sides ID
+  function loadGA(){
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id='+ID;
+    document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag;
+    gtag('js',new Date());
+    gtag('config',ID);
+    document.querySelectorAll('a[data-klinikk]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+  }
+  var consent=localStorage.getItem('hh_consent');
+  var banner=document.getElementById('cookie-banner');
+  if(consent==='yes'){loadGA();}
+  else if(consent!=='no'){banner.style.display='flex';}
+  document.getElementById('cookie-accept').addEventListener('click',function(){
+    localStorage.setItem('hh_consent','yes');
+    banner.style.display='none';
+    loadGA();
+  });
+  document.getElementById('cookie-decline').addEventListener('click',function(){
+    localStorage.setItem('hh_consent','no');
+    banner.style.display='none';
+  });
+})();
+</script>
+
+</body>
+</html>

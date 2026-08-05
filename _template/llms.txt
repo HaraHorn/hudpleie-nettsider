@@ -1,0 +1,22 @@
+# {{DOMENE}}
+
+> Gratis oversikt over {{søkeord}}klinikker i {{BY}} som tilbyr [kort beskrivelse av behandlinger].
+
+{{DOMENE}} hjelper deg å finne kvalifiserte {{søkeord}}steder i {{BY}} og omegn. Siden lister adresse, telefon og nettside for hver klinikk.
+
+## Klinikker
+- 5 {{søkeord}}klinikker i {{BY}} og omegn
+- Inkluderer bl.a. [klinikknavn 1], [klinikknavn 2], [klinikknavn 3], [klinikknavn 4] og [klinikknavn 5]
+- Informasjon hentet fra Google Places
+
+## Tjenester
+[Skriv en kort beskrivelse av tjenestene klinikkene tilbyr.]
+
+## By
+{{BY}}, [fylke], Norge. Ca. [innbyggertall] innbyggere. Sentrale bydeler: [bydel 1] og [bydel 2].
+
+## Om siden
+- Gratis å bruke for alle besøkende
+- Eier: HaraHorn, Org.nr 915 158 323
+- Kontakt: Hello@HaraHorn.com
+- Se også: [Annen søkeord 1] {{BY}}.no, [Annen søkeord 2] {{BY}}.no
