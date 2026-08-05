@@ -120,7 +120,19 @@ Alle sider har en `<!-- LENKER START --> ... <!-- LENKER SLUTT -->`-seksjon rett
 ```
 node scripts/oppdater_lenker.js
 ```
-Kjøres automatisk ved: nye sider, nye hub-sider, domener som aktiveres.
+**Dette steget er obligatorisk, ikke valgfritt.** En ny side er ikke faktisk
+kryss-lenket fra resten av nettverket før scriptet er kjørt – det holder ikke
+å bare legge siden til i `SITES`-arrayet. Kjøres ved: nye sider, nye hub-sider,
+domener som aktiveres.
+
+### Verifiser at lenkenettet er i sync
+```
+node scripts/oppdater_lenker.js --check
+```
+Kjører uten å skrive noe til disk – sammenligner lenkeblokken i hver side mot
+det den burde vært, og feiler (exit code 1) hvis noen side er ute av sync.
+Bruk denne som en sjekk før push, spesielt etter økter der flere sider er
+redigert, for å bekrefte at ingen glemte å kjøre scriptet.
 
 ### Legg til en ny hub-side (f.eks. Tannlege.no)
 Rediger `scripts/oppdater_lenker.js`, legg til i `HUB_SITES`:

@@ -2,6 +2,12 @@
 // Generer og injiser lenkenett-seksjonen i alle HTML-filer.
 // Kjør: node scripts/oppdater_lenker.js
 // Legg til nye sider i SITES, og nye hub-sider i HUB_SITES, og kjør på nytt.
+//
+// --check: kjør uten å skrive noe til disk. Sammenligner lenkeblokken i hver
+// side mot det den burde vært og rapporterer avvik. Avslutter med exit code 1
+// hvis noen side er ute av sync (nyttig som en sjekk før push). Kjør dette
+// etter enhver økt der flere sider er redigert, for å bekrefte at ingen
+// glemte "kjør scriptet"-steget i "Nye sider"-prosessen.
 
 const fs = require('fs');
 const path = require('path');
@@ -114,9 +120,11 @@ function buildLinksHtml(site) {
 const ROOT = path.join(__dirname, '..');
 const START = '<!-- LENKER START -->';
 const END   = '<!-- LENKER SLUTT -->';
+const CHECK = process.argv.includes('--check');
 
 let updated = 0;
 let skipped = 0;
+let outOfSync = 0;
 
 for (const site of SITES) {
   const filePath = path.join(ROOT, site.folder, 'index.html');
@@ -128,6 +136,22 @@ for (const site of SITES) {
 
   let html = fs.readFileSync(filePath, 'utf8');
   const newBlock = buildLinksHtml(site);
+
+  if (CHECK) {
+    // Normaliser linjeskift før sammenligning – git core.autocrlf gjør at
+    // filer på disk kan ha CRLF selv om dette scriptet alltid genererer LF.
+    let currentBlock = null;
+    if (html.includes(START) && html.includes(END)) {
+      currentBlock = html.slice(html.indexOf(START), html.indexOf(END) + END.length).replace(/\r\n/g, '\n');
+    }
+    if (currentBlock === newBlock.replace(/\r\n/g, '\n')) {
+      console.log(`  ✓ ${site.folder}/index.html (i sync)`);
+    } else {
+      console.log(`  ✗ ${site.folder}/index.html (UTE AV SYNC${currentBlock === null ? ' – mangler LENKER-blokk' : ''})`);
+      outOfSync++;
+    }
+    continue;
+  }
 
   if (html.includes(START) && html.includes(END)) {
     // Erstatt eksisterende blokk
@@ -147,6 +171,12 @@ for (const site of SITES) {
   fs.writeFileSync(filePath, html, 'utf8');
   console.log(`  ✓ ${site.folder}/index.html`);
   updated++;
+}
+
+if (CHECK) {
+  const inSync = SITES.length - skipped - outOfSync;
+  console.log(`\nFerdig: ${inSync} sider i sync, ${outOfSync} sider ute av sync, ${skipped} hoppet over.`);
+  process.exit(outOfSync > 0 ? 1 : 0);
 }
 
 console.log(`\nFerdig: ${updated} sider oppdatert, ${skipped} hoppet over.`);
