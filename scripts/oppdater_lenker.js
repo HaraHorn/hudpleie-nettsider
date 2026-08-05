@@ -57,6 +57,10 @@ const SITES = [
   { folder: 'botoxarendal',        keyword: 'botox',    city: 'Arendal',       url: 'https://botoxarendal.no',          display: 'BotoxArendal.no',        active: true  },
   { folder: 'hudpleiearendal',     keyword: 'hudpleie', city: 'Arendal',       url: 'https://hudpleiearendal.no',       display: 'HudpleieArendal.no',     active: true  },
   { folder: 'laserarendal',        keyword: 'laser',    city: 'Arendal',       url: 'https://laserarendal.no',          display: 'LaserArendal.no',        active: true  },
+  // Sandefjord
+  { folder: 'botoxsandefjord',     keyword: 'botox',    city: 'Sandefjord',    url: 'https://botoxsandefjord.no',       display: 'BotoxSandefjord.no',     active: true  },
+  { folder: 'hudpleiesandefjord',  keyword: 'hudpleie', city: 'Sandefjord',    url: 'https://hudpleiesandefjord.com',   display: 'HudpleieSandefjord.com', active: true  },
+  { folder: 'lasersandefjord',     keyword: 'laser',    city: 'Sandefjord',    url: 'https://lasersandefjord.no',       display: 'LaserSandefjord.no',     active: true  },
 ];
 
 // Legg til nye hub-sider her når de opprettes

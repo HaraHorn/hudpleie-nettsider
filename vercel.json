@@ -136,6 +136,18 @@
     {
       "src": "laserarendal/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "botoxsandefjord/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "hudpleiesandefjord/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "lasersandefjord/**",
+      "use": "@vercel/static"
     }
   ],
   "rewrites": [
@@ -1338,6 +1350,66 @@
       "source": "/llms.txt",
       "destination": "/laserarendal/llms.txt",
       "has": [{ "type": "host", "value": "laserarendal.no" }]
+    },
+    {
+      "source": "/",
+      "destination": "/botoxsandefjord/index.html",
+      "has": [{ "type": "host", "value": "botoxsandefjord.no" }]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/botoxsandefjord/sitemap.xml",
+      "has": [{ "type": "host", "value": "botoxsandefjord.no" }]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/botoxsandefjord/robots.txt",
+      "has": [{ "type": "host", "value": "botoxsandefjord.no" }]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/botoxsandefjord/llms.txt",
+      "has": [{ "type": "host", "value": "botoxsandefjord.no" }]
+    },
+    {
+      "source": "/",
+      "destination": "/hudpleiesandefjord/index.html",
+      "has": [{ "type": "host", "value": "hudpleiesandefjord.com" }]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/hudpleiesandefjord/sitemap.xml",
+      "has": [{ "type": "host", "value": "hudpleiesandefjord.com" }]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/hudpleiesandefjord/robots.txt",
+      "has": [{ "type": "host", "value": "hudpleiesandefjord.com" }]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/hudpleiesandefjord/llms.txt",
+      "has": [{ "type": "host", "value": "hudpleiesandefjord.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/lasersandefjord/index.html",
+      "has": [{ "type": "host", "value": "lasersandefjord.no" }]
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/lasersandefjord/sitemap.xml",
+      "has": [{ "type": "host", "value": "lasersandefjord.no" }]
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/lasersandefjord/robots.txt",
+      "has": [{ "type": "host", "value": "lasersandefjord.no" }]
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/lasersandefjord/llms.txt",
+      "has": [{ "type": "host", "value": "lasersandefjord.no" }]
     }
   ]
 }

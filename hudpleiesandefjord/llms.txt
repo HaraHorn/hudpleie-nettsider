@@ -1,0 +1,9 @@
+# HudpleieSandefjord.com
+
+Nettsted: https://hudpleiesandefjord.com/
+Søkeord: hudpleie Sandefjord
+By: Sandefjord
+Fylke: Vestfold fylke
+
+Dette er en oversiktsside over hudpleiesteder i Sandefjord og omegn.
+Siden inneholder en liste over anbefalte klinikker med adresse, telefon og nettside.
