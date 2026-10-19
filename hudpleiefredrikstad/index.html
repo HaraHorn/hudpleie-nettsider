@@ -112,7 +112,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.deluxe-spa.no/" target="_blank" class="btn-primary" data-klinikk="Deluxe spa Clinic AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Deluxe+spa+Clinic+AS+Storgata+32%2C+1607+Fredrikstad" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Deluxe+spa+Clinic+AS+Storgata+32%2C+1607+Fredrikstad" target="_blank" class="btn-secondary" data-klinikk-kart="Deluxe spa Clinic AS">Kart</a>
         </div>
       </div>
 
@@ -133,7 +133,7 @@
         </div>
         <div class="card-footer">
           <a href="https://beautybyhrynkiewicz.com/" target="_blank" class="btn-primary" data-klinikk="Beauty by Hrynkiewicz Karolina - Hudpleie og Negler Fredrikstad">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Beauty+by+Hrynkiewicz+Karolina+-+Hudpleie+og+Negler+Fredrikstad+Brochs+gate+1%2C+1607+Fredrikstad" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Beauty+by+Hrynkiewicz+Karolina+-+Hudpleie+og+Negler+Fredrikstad+Brochs+gate+1%2C+1607+Fredrikstad" target="_blank" class="btn-secondary" data-klinikk-kart="Beauty by Hrynkiewicz Karolina - Hudpleie og Negler Fredrikstad">Kart</a>
         </div>
       </div>
 
@@ -154,7 +154,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.vvstua.no/" target="_blank" class="btn-primary" data-klinikk="Velværestua hud & kropp">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Velv%C3%A6restua+hud+%26+kropp+Rektor+%C3%98stbyes+gate+4b%2C+1604+Fredrikstad" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Velv%C3%A6restua+hud+%26+kropp+Rektor+%C3%98stbyes+gate+4b%2C+1604+Fredrikstad" target="_blank" class="btn-secondary" data-klinikk-kart="Velværestua hud & kropp">Kart</a>
         </div>
       </div>
 
@@ -175,7 +175,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.centrumfaceandbody.no/" target="_blank" class="btn-primary" data-klinikk="Centrum Face & Body Clinique">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Centrum+Face+%26+Body+Clinique+Dr.+Giebelhausens+gate+2%2C+1607+Fredrikstad" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Centrum+Face+%26+Body+Clinique+Dr.+Giebelhausens+gate+2%2C+1607+Fredrikstad" target="_blank" class="btn-secondary" data-klinikk-kart="Centrum Face & Body Clinique">Kart</a>
         </div>
       </div>
 
@@ -196,7 +196,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.tmklinikken.no/" target="_blank" class="btn-primary" data-klinikk="TM clinic AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=TM+clinic+AS+Nygaardsgata+36%2C+1607+Fredrikstad" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=TM+clinic+AS+Nygaardsgata+36%2C+1607+Fredrikstad" target="_blank" class="btn-secondary" data-klinikk-kart="TM clinic AS">Kart</a>
         </div>
       </div>
 
@@ -380,6 +380,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

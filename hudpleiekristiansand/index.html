@@ -112,7 +112,7 @@
         </div>
         <div class="card-footer">
           <a href="https://velbehagklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Velbehag Medisinsk Hudklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Kirkegata+26%2C+4612+Kristiansand" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Kirkegata+26%2C+4612+Kristiansand" target="_blank" class="btn-secondary" data-klinikk-kart="Velbehag Medisinsk Hudklinikk">Kart</a>
         </div>
       </div>
 
@@ -133,7 +133,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.klinikknyhud.no/" target="_blank" class="btn-primary" data-klinikk="Klinikk Nyhud avd. Sentrum">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Klinikk+Nyhud+avd.+Sentrum+Kirkegata+18A%2C+4611+Kristiansand" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Klinikk+Nyhud+avd.+Sentrum+Kirkegata+18A%2C+4611+Kristiansand" target="_blank" class="btn-secondary" data-klinikk-kart="Klinikk Nyhud avd. Sentrum">Kart</a>
         </div>
       </div>
 
@@ -154,7 +154,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.linjerhudpleie.no/" target="_blank" class="btn-primary" data-klinikk="LINJER Hudpleie">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=LINJER+Hudpleie+Skippergata+38%2C+4611+Kristiansand+S" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=LINJER+Hudpleie+Skippergata+38%2C+4611+Kristiansand+S" target="_blank" class="btn-secondary" data-klinikk-kart="LINJER Hudpleie">Kart</a>
         </div>
       </div>
 
@@ -175,7 +175,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.rubinhud.no/" target="_blank" class="btn-primary" data-klinikk="Rubin Hud - Estetisk Hudklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Rubin+Hud+-+Estetisk+Hudklinikk+Rigedalen+41%2C+4626+Kristiansand" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Rubin+Hud+-+Estetisk+Hudklinikk+Rigedalen+41%2C+4626+Kristiansand" target="_blank" class="btn-secondary" data-klinikk-kart="Rubin Hud - Estetisk Hudklinikk">Kart</a>
         </div>
       </div>
 
@@ -196,7 +196,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.klinikknova.no/" target="_blank" class="btn-primary" data-klinikk="Klinikk Nova Sentrum">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Klinikk+Nova+Sentrum+Skippergata+38%2C+4611+Kristiansand" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Klinikk+Nova+Sentrum+Skippergata+38%2C+4611+Kristiansand" target="_blank" class="btn-secondary" data-klinikk-kart="Klinikk Nova Sentrum">Kart</a>
         </div>
       </div>
 
@@ -380,6 +380,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

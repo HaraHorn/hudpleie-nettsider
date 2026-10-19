@@ -128,7 +128,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.eliteklinikken.no/" target="_blank" class="btn-primary" data-klinikk="ELITE CLINIC AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=ELITE+CLINIC+AS+Sandviksveien+176%2C+1337+Sandvika" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=ELITE+CLINIC+AS+Sandviksveien+176%2C+1337+Sandvika" target="_blank" class="btn-secondary" data-klinikk-kart="ELITE CLINIC AS">Kart</a>
         </div>
       </div>
 
@@ -149,7 +149,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.dermamedica.no/" target="_blank" class="btn-primary" data-klinikk="Derma Medica - Hudpleieklinikk Sandvika">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Derma+Medica+-+Hudpleieklinikk+Sandvika+R%C3%A5dmann+Halmrasts+vei+10%2C+under+etg%2C+1337+Sandvika" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Derma+Medica+-+Hudpleieklinikk+Sandvika+R%C3%A5dmann+Halmrasts+vei+10%2C+under+etg%2C+1337+Sandvika" target="_blank" class="btn-secondary" data-klinikk-kart="Derma Medica - Hudpleieklinikk Sandvika">Kart</a>
         </div>
       </div>
 
@@ -170,7 +170,7 @@
         </div>
         <div class="card-footer">
           <a href="https://egerskinclinic.no/klinikker/sandvika/" target="_blank" class="btn-primary" data-klinikk="Eger Clinic Sandvika">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Eger+Clinic+Sandvika+Claude+Monets+alle+20%2C+1338+Sandvika" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Eger+Clinic+Sandvika+Claude+Monets+alle+20%2C+1338+Sandvika" target="_blank" class="btn-secondary" data-klinikk-kart="Eger Clinic Sandvika">Kart</a>
         </div>
       </div>
 
@@ -191,7 +191,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.sandvikahudogkropp.no/" target="_blank" class="btn-primary" data-klinikk="Sandvika Hud og Kroppssenter AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Sandvika+Hud+og+Kroppssenter+AS+Brodtkorbsgate+7%2C+1338+Sandvika" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Sandvika+Hud+og+Kroppssenter+AS+Brodtkorbsgate+7%2C+1338+Sandvika" target="_blank" class="btn-secondary" data-klinikk-kart="Sandvika Hud og Kroppssenter AS">Kart</a>
         </div>
       </div>
 
@@ -212,7 +212,7 @@
         </div>
         <div class="card-footer">
           <a href="http://proskin.no/" target="_blank" class="btn-primary" data-klinikk="Proskin Sandvika">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Proskin+Sandvika+Sandviksveien+155%2C+1337+Sandvika" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Proskin+Sandvika+Sandviksveien+155%2C+1337+Sandvika" target="_blank" class="btn-secondary" data-klinikk-kart="Proskin Sandvika">Kart</a>
         </div>
       </div>
 
@@ -396,6 +396,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

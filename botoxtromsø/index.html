@@ -136,7 +136,7 @@
         </div>
         <div class="card-footer">
           <a href="https://velbehagklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Velbehag Medisinsk Hudklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Gr%C3%B8nnegata+40%2C+9008+Troms%C3%B8" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Gr%C3%B8nnegata+40%2C+9008+Troms%C3%B8" target="_blank" class="btn-secondary" data-klinikk-kart="Velbehag Medisinsk Hudklinikk">Kart</a>
         </div>
       </div>
 
@@ -157,7 +157,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.mediva.no/" target="_blank" class="btn-primary" data-klinikk="MEDIVA AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=MEDIVA+AS+Gr%C3%B8nnegata+10%2C+9008+Troms%C3%B8" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=MEDIVA+AS+Gr%C3%B8nnegata+10%2C+9008+Troms%C3%B8" target="_blank" class="btn-secondary" data-klinikk-kart="MEDIVA AS">Kart</a>
         </div>
       </div>
 
@@ -178,7 +178,7 @@
         </div>
         <div class="card-footer">
           <a href="http://proderma.no/" target="_blank" class="btn-primary" data-klinikk="ProDerma Estetisk Klinikk | Tromsø">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=ProDerma+Estetisk+Klinikk+%7C+Troms%C3%B8+Gr%C3%B8nnegata+38%2C+9008+Troms%C3%B8" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=ProDerma+Estetisk+Klinikk+%7C+Troms%C3%B8+Gr%C3%B8nnegata+38%2C+9008+Troms%C3%B8" target="_blank" class="btn-secondary" data-klinikk-kart="ProDerma Estetisk Klinikk | Tromsø">Kart</a>
         </div>
       </div>
 
@@ -199,7 +199,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.skinlabtromso.com/" target="_blank" class="btn-primary" data-klinikk="SkinLab Tromsø">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=SkinLab+Troms%C3%B8+Gr%C3%B8nnegata+62%2C+9008+Troms%C3%B8" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=SkinLab+Troms%C3%B8+Gr%C3%B8nnegata+62%2C+9008+Troms%C3%B8" target="_blank" class="btn-secondary" data-klinikk-kart="SkinLab Tromsø">Kart</a>
         </div>
       </div>
 
@@ -219,7 +219,7 @@
         </div>
         <div class="card-footer">
           <a href="http://ansikta.no/" target="_blank" class="btn-primary" data-klinikk="Ansikta Medica Tromsø">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Ansikta+Medica+Troms%C3%B8+Storgata+88%2C+9008+Troms%C3%B8" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Ansikta+Medica+Troms%C3%B8+Storgata+88%2C+9008+Troms%C3%B8" target="_blank" class="btn-secondary" data-klinikk-kart="Ansikta Medica Tromsø">Kart</a>
         </div>
       </div>
 
@@ -406,6 +406,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

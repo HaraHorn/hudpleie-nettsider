@@ -137,7 +137,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.hudsykepleieren.no/" target="_blank" class="btn-primary" data-klinikk="Skin Clinic Drammen">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Skin+Clinic+Drammen+Nedre+Storgate+22+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Skin+Clinic+Drammen+Nedre+Storgate+22+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="Skin Clinic Drammen">Kart</a>
         </div>
       </div>
 
@@ -158,7 +158,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.mklinikken.no/" target="_blank" class="btn-primary" data-klinikk="M clinic">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=M+clinic+Nedre+Storgate+43+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=M+clinic+Nedre+Storgate+43+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="M clinic">Kart</a>
         </div>
       </div>
 
@@ -179,7 +179,7 @@
         </div>
         <div class="card-footer">
           <a href="https://velbehagklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Velbehag Medisinsk Hudklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Nedre+Storgate+14+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Nedre+Storgate+14+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="Velbehag Medisinsk Hudklinikk">Kart</a>
         </div>
       </div>
 
@@ -200,7 +200,7 @@
         </div>
         <div class="card-footer">
           <a href="https://mias-klinikk.no/" target="_blank" class="btn-primary" data-klinikk="Mias Klinikk AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Mias+Klinikk+Jernbanegata+6+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Mias+Klinikk+Jernbanegata+6+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="Mias Klinikk AS">Kart</a>
         </div>
       </div>
 
@@ -221,7 +221,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.ellemedical.no/" target="_blank" class="btn-primary" data-klinikk="Kosmetisk sykepleier Linda Larsen">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Elle+Medical+Solbakken+1+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Elle+Medical+Solbakken+1+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="Kosmetisk sykepleier Linda Larsen">Kart</a>
         </div>
       </div>
 
@@ -409,6 +409,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

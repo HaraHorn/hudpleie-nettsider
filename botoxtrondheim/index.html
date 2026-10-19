@@ -134,7 +134,7 @@
         </div>
         <div class="card-footer">
           <a href="#" class="btn-primary" data-klinikk="Klinikk 1">Besøk nettside</a>
-          <a href="#" class="btn-secondary">Kart</a>
+          <a href="#" class="btn-secondary" data-klinikk-kart="Klinikk 1">Kart</a>
         </div>
       </div>
 
@@ -153,7 +153,7 @@
         </div>
         <div class="card-footer">
           <a href="#" class="btn-primary" data-klinikk="Klinikk 2">Besøk nettside</a>
-          <a href="#" class="btn-secondary">Kart</a>
+          <a href="#" class="btn-secondary" data-klinikk-kart="Klinikk 2">Kart</a>
         </div>
       </div>
 
@@ -172,7 +172,7 @@
         </div>
         <div class="card-footer">
           <a href="#" class="btn-primary" data-klinikk="Klinikk 3">Besøk nettside</a>
-          <a href="#" class="btn-secondary">Kart</a>
+          <a href="#" class="btn-secondary" data-klinikk-kart="Klinikk 3">Kart</a>
         </div>
       </div>
 
@@ -191,7 +191,7 @@
         </div>
         <div class="card-footer">
           <a href="#" class="btn-primary" data-klinikk="Klinikk 4">Besøk nettside</a>
-          <a href="#" class="btn-secondary">Kart</a>
+          <a href="#" class="btn-secondary" data-klinikk-kart="Klinikk 4">Kart</a>
         </div>
       </div>
 
@@ -210,7 +210,7 @@
         </div>
         <div class="card-footer">
           <a href="#" class="btn-primary" data-klinikk="Klinikk 5">Besøk nettside</a>
-          <a href="#" class="btn-secondary">Kart</a>
+          <a href="#" class="btn-secondary" data-klinikk-kart="Klinikk 5">Kart</a>
         </div>
       </div>
 
@@ -399,6 +399,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

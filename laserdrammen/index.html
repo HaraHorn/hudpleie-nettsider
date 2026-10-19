@@ -129,7 +129,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.hudsykepleieren.no/" target="_blank" class="btn-primary" data-klinikk="Skin Clinic Drammen">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Skin+Clinic+Drammen+Nedre+Storgate+22+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Skin+Clinic+Drammen+Nedre+Storgate+22+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="Skin Clinic Drammen">Kart</a>
         </div>
       </div>
 
@@ -150,7 +150,7 @@
         </div>
         <div class="card-footer">
           <a href="https://drammenlaserklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Drammen Laserklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Drammen+Laserklinikk+Lierstranda+77%2C+3414+Lier" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Drammen+Laserklinikk+Lierstranda+77%2C+3414+Lier" target="_blank" class="btn-secondary" data-klinikk-kart="Drammen Laserklinikk">Kart</a>
         </div>
       </div>
 
@@ -171,7 +171,7 @@
         </div>
         <div class="card-footer">
           <a href="https://velbehagklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Velbehag Medisinsk Hudklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Nedre+Storgate+14%2C+3015+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Nedre+Storgate+14%2C+3015+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="Velbehag Medisinsk Hudklinikk">Kart</a>
         </div>
       </div>
 
@@ -192,7 +192,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.klinikkhaukeland.no/" target="_blank" class="btn-primary" data-klinikk="Klinikk Haukeland">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Klinikk+Haukeland+Engene+116+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Klinikk+Haukeland+Engene+116+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="Klinikk Haukeland">Kart</a>
         </div>
       </div>
 
@@ -213,7 +213,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.drammenplastikkirurgi.no/" target="_blank" class="btn-primary" data-klinikk="Drammen Plastikkirurgi">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Drammen+Plastikkirurgi+Svelvikveien+4+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Drammen+Plastikkirurgi+Svelvikveien+4+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="Drammen Plastikkirurgi">Kart</a>
         </div>
       </div>
 
@@ -385,6 +385,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

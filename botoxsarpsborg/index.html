@@ -120,7 +120,7 @@
         </div>
         <div class="card-footer">
           <a href="https://dermasykepleier.no/" target="_blank" class="btn-primary" data-klinikk="Dermasykepleier">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Dermasykepleier+Kallastenveien+35%2C+1708+Sarpsborg" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Dermasykepleier+Kallastenveien+35%2C+1708+Sarpsborg" target="_blank" class="btn-secondary" data-klinikk-kart="Dermasykepleier">Kart</a>
         </div>
       </div>
 
@@ -141,7 +141,7 @@
         </div>
         <div class="card-footer">
           <a href="https://solbyen-dermaklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Solbyen Dermaklinikk AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Solbyen+Dermaklinikk+AS+Saturnveien+48%2C+1734+Hafslunds%C3%B8y" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Solbyen+Dermaklinikk+AS+Saturnveien+48%2C+1734+Hafslunds%C3%B8y" target="_blank" class="btn-secondary" data-klinikk-kart="Solbyen Dermaklinikk AS">Kart</a>
         </div>
       </div>
 
@@ -162,7 +162,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.medisinskhudpleier.no/" target="_blank" class="btn-primary" data-klinikk="Landeklinikken">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Landeklinikken+Tamburveien+9%2C+109-Senteret+Gre%C3%A5ker%2C+1718+Sarpsborg" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Landeklinikken+Tamburveien+9%2C+109-Senteret+Gre%C3%A5ker%2C+1718+Sarpsborg" target="_blank" class="btn-secondary" data-klinikk-kart="Landeklinikken">Kart</a>
         </div>
       </div>
 
@@ -183,7 +183,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.borghudogfotklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Borg hud og fotklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Borg+hud+og+fotklinikk+Kirkegata+50%2C+1721+Sarpsborg" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Borg+hud+og+fotklinikk+Kirkegata+50%2C+1721+Sarpsborg" target="_blank" class="btn-secondary" data-klinikk-kart="Borg hud og fotklinikk">Kart</a>
         </div>
       </div>
 
@@ -203,7 +203,7 @@
         </div>
         <div class="card-footer">
           <button class="btn-primary">Se mer</button>
-          <a href="https://maps.google.com/?q=Medusa+clinic+Glengsgata+26%2C+1706+Sarpsborg" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Medusa+clinic+Glengsgata+26%2C+1706+Sarpsborg" target="_blank" class="btn-secondary" data-klinikk-kart="Medusa clinic">Kart</a>
         </div>
       </div>
 
@@ -390,6 +390,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

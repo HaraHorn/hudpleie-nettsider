@@ -112,7 +112,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.beautymedical.no/" target="_blank" class="btn-primary" data-klinikk="Beauty Medical">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Beauty+Medical+Olaf+Ryes+plass+5a%2C+0552+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Beauty+Medical+Olaf+Ryes+plass+5a%2C+0552+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Beauty Medical">Kart</a>
         </div>
       </div>
 
@@ -133,7 +133,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.globalskinclinic.no/" target="_blank" class="btn-primary" data-klinikk="Global Skin Clinic">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Global+Skin+Clinic+Fridtjof+Nansens+plass+9%2C+0160+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Global+Skin+Clinic+Fridtjof+Nansens+plass+9%2C+0160+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Global Skin Clinic">Kart</a>
         </div>
       </div>
 
@@ -154,7 +154,7 @@
         </div>
         <div class="card-footer">
           <a href="https://velbehagklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Velbehag avd. Fredensborg">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Velbehag+avd.+Fredensborg+Fredensborgveien+26+a%2C+0177+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Velbehag+avd.+Fredensborg+Fredensborgveien+26+a%2C+0177+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Velbehag avd. Fredensborg">Kart</a>
         </div>
       </div>
 
@@ -175,7 +175,7 @@
         </div>
         <div class="card-footer">
           <a href="http://egerskinclinic.no/" target="_blank" class="btn-primary" data-klinikk="Eger Skin Clinic">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Eger+Skin+Clinic+%C3%98vre+Slottsgate+27%2C+0157+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Eger+Skin+Clinic+%C3%98vre+Slottsgate+27%2C+0157+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Eger Skin Clinic">Kart</a>
         </div>
       </div>
 
@@ -196,7 +196,7 @@
         </div>
         <div class="card-footer">
           <a href="https://drclinica.no/" target="_blank" class="btn-primary" data-klinikk="Dr.CLINICA">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Dr.CLINICA+Parkveien+19%2C+0350+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Dr.CLINICA+Parkveien+19%2C+0350+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Dr.CLINICA">Kart</a>
         </div>
       </div>
 
@@ -383,6 +383,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

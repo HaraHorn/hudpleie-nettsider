@@ -150,6 +150,36 @@ Klinikkgrid-innholdet må ha disse markørene for at scriptet skal fungere:
 - Klinikkortene mellom markørene
 - `result-count` span med antall klinikker funnet
 
+## Klikksporing og klikk-rapport
+
+Alle sider sender disse GA4-eventene (kun for besøkende som har godtatt cookies):
+- `klinikk_klikk` – klikk på «Besøk nettside» (knappen har `data-klinikk="NAVN"`)
+- `klinikk_kart_klikk` – klikk på «Kart» (lenken har `data-klinikk-kart="NAVN"`)
+
+Begge sender `klinikk_navn` og `side`. `scripts/hent_google_places.js` legger på attributtene automatisk;
+kopieres en eksisterende side må `data-klinikk-kart` være med på Kart-lenkene, og GA-blokken nederst må inneholde begge lyttere.
+Hver side har sin egen unike GA4-ID (`var ID='G-...'`) – aldri gjenbruk en annen sides ID.
+
+### Samlet rapport over klikk per klinikk
+```
+node scripts/klikk_rapport.js                      # siste 30 dager
+node scripts/klikk_rapport.js --dager 7
+node scripts/klikk_rapport.js --fra 2026-09-01 --til 2026-09-30
+```
+Lager `rapporter/klikk-rapport-<dato>.html` (sorterbar, samlet + per side) og `.csv` (åpnes i Excel). `rapporter/` er i .gitignore.
+Scriptet finner sidene og GA4-IDene selv fra `index.html`-filene, og slår opp riktig GA4-property via målings-ID-en.
+
+**Engangsoppsett:**
+1. Google Cloud Console → aktiver «Google Analytics Data API» og «Google Analytics Admin API».
+2. Opprett en tjenestekonto og last ned en JSON-nøkkel. Lagre den utenfor repoet.
+3. GA4 → Admin → Kontotilgang: legg tjenestekontoens e-post til med rolle Viewer (Editor trengs bare til steg 5).
+4. Sett `GA_SERVICE_ACCOUNT_FILE=<sti til nøkkelen>` i `.env`.
+5. `node scripts/klikk_rapport.js --opprett-dimensjoner` oppretter custom dimension `klinikk_navn` i alle properties
+   (nødvendig for å kunne bryte ned på klinikk; teller bare klikk fra og med opprettelsen). Etter dette kan rollen senkes til Viewer.
+
+Merk: tallene er lavere enn faktiske klikk fordi kun cookie-godtatte besøk telles. Sider med `G-TODO_...`-ID
+(domener som ikke er registrert ennå) hoppes over.
+
 ## Skalering til nye bransjer
 Samme struktur kan brukes for andre bransjer. Bytt ut:
 - Søkeord (Botox/Hudpleie/Laser → Tannlege/Frisør/Negl osv.)

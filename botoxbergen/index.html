@@ -136,7 +136,7 @@
         </div>
         <div class="card-footer">
           <a href="https://velbehagklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Velbehag Medisinsk Hudklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Nyg%C3%A5rdsgaten+43%2C+5008+Bergen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Nyg%C3%A5rdsgaten+43%2C+5008+Bergen" target="_blank" class="btn-secondary" data-klinikk-kart="Velbehag Medisinsk Hudklinikk">Kart</a>
         </div>
       </div>
 
@@ -157,7 +157,7 @@
         </div>
         <div class="card-footer">
           <a href="http://klinikkbirkeland.no/" target="_blank" class="btn-primary" data-klinikk="Klinikk Birkeland AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Klinikk+Birkeland+AS+Agnes+Mowinckels+gate+5%2C+5008+Bergen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Klinikk+Birkeland+AS+Agnes+Mowinckels+gate+5%2C+5008+Bergen" target="_blank" class="btn-secondary" data-klinikk-kart="Klinikk Birkeland AS">Kart</a>
         </div>
       </div>
 
@@ -178,7 +178,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.tblmedical.no/" target="_blank" class="btn-primary" data-klinikk="TBL Medical">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=TBL+Medical+Marken+32%2C+5017+Bergen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=TBL+Medical+Marken+32%2C+5017+Bergen" target="_blank" class="btn-secondary" data-klinikk-kart="TBL Medical">Kart</a>
         </div>
       </div>
 
@@ -199,7 +199,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.akademikliniken.no/" target="_blank" class="btn-primary" data-klinikk="Akademikliniken Bergen">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Akademikliniken+Bergen+Torggaten+3%2C+5014+Bergen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Akademikliniken+Bergen+Torggaten+3%2C+5014+Bergen" target="_blank" class="btn-secondary" data-klinikk-kart="Akademikliniken Bergen">Kart</a>
         </div>
       </div>
 
@@ -220,7 +220,7 @@
         </div>
         <div class="card-footer">
           <a href="http://bestbeautyklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Best Beauty Klinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Best+Beauty+Klinikk+Fj%C3%B8sangerveien+51%2C+5054+Bergen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Best+Beauty+Klinikk+Fj%C3%B8sangerveien+51%2C+5054+Bergen" target="_blank" class="btn-secondary" data-klinikk-kart="Best Beauty Klinikk">Kart</a>
         </div>
       </div>
 
@@ -408,6 +408,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

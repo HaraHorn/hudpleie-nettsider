@@ -104,7 +104,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.sandefjordmedisinskehudpleie.no/" target="_blank" class="btn-primary" data-klinikk="Sandefjord Medisinske Hudpleie">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Sandefjord+Medisinske+Hudpleie+Jernbanealleen+28%2C+3210+Sandefjord" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Sandefjord+Medisinske+Hudpleie+Jernbanealleen+28%2C+3210+Sandefjord" target="_blank" class="btn-secondary" data-klinikk-kart="Sandefjord Medisinske Hudpleie">Kart</a>
         </div>
       </div>
 
@@ -125,7 +125,7 @@
         </div>
         <div class="card-footer">
           <a href="https://pronahud.no/" target="_blank" class="btn-primary" data-klinikk="ProNa Hudklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=ProNa+Hudklinikk+Kirkegata+8%2C+3211+Sandefjord" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=ProNa+Hudklinikk+Kirkegata+8%2C+3211+Sandefjord" target="_blank" class="btn-secondary" data-klinikk-kart="ProNa Hudklinikk">Kart</a>
         </div>
       </div>
 
@@ -146,7 +146,7 @@
         </div>
         <div class="card-footer">
           <a href="https://femlone.no/sandefjord" target="_blank" class="btn-primary" data-klinikk="Femlone Aesthetic Clinic Sandefjord">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Femlone+Aesthetic+Clinic+Sandefjord+Kongens+gate+9%2C+3210+Sandefjord" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Femlone+Aesthetic+Clinic+Sandefjord+Kongens+gate+9%2C+3210+Sandefjord" target="_blank" class="btn-secondary" data-klinikk-kart="Femlone Aesthetic Clinic Sandefjord">Kart</a>
         </div>
       </div>
 
@@ -167,7 +167,7 @@
         </div>
         <div class="card-footer">
           <a href="https://vipbeautylounge.no/" target="_blank" class="btn-primary" data-klinikk="VIP BEAUTY LOUNGE AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=VIP+BEAUTY+LOUNGE+AS+Torget+10%2C+3210+Sandefjord" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=VIP+BEAUTY+LOUNGE+AS+Torget+10%2C+3210+Sandefjord" target="_blank" class="btn-secondary" data-klinikk-kart="VIP BEAUTY LOUNGE AS">Kart</a>
         </div>
       </div>
 
@@ -188,7 +188,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.kostudiol.no/" target="_blank" class="btn-primary" data-klinikk="Studio L Sandefjord">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Studio+L+Sandefjord+Jernbanealleen+19%2C+3210+Sandefjord" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Studio+L+Sandefjord+Jernbanealleen+19%2C+3210+Sandefjord" target="_blank" class="btn-secondary" data-klinikk-kart="Studio L Sandefjord">Kart</a>
         </div>
       </div>
 
@@ -379,6 +379,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

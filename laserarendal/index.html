@@ -73,7 +73,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.klinikkarendal.no/" target="_blank" class="btn-primary" data-klinikk="Klinikk Arendal">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Klinikk+Arendal+Vesterveien+44%2C+4839+Arendal" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Klinikk+Arendal+Vesterveien+44%2C+4839+Arendal" target="_blank" class="btn-secondary" data-klinikk-kart="Klinikk Arendal">Kart</a>
         </div>
       </div>
 
@@ -94,7 +94,7 @@
         </div>
         <div class="card-footer">
           <a href="https://hud-klinikken.no/" target="_blank" class="btn-primary" data-klinikk="Hud-Klinikken">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Hud-Klinikken+Vikaveien+80%2C+4816+Kolbj%C3%B8rnsvik" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Hud-Klinikken+Vikaveien+80%2C+4816+Kolbj%C3%B8rnsvik" target="_blank" class="btn-secondary" data-klinikk-kart="Hud-Klinikken">Kart</a>
         </div>
       </div>
 
@@ -266,7 +266,7 @@
 <script>
 (function(){
   var ID='G-0ZCZE7KZSE';
-  function loadGA(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config',ID);document.querySelectorAll('a[data-klinikk]').forEach(function(el){el.addEventListener('click',function(){gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});});});}
+  function loadGA(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config',ID);document.querySelectorAll('a[data-klinikk]').forEach(function(el){el.addEventListener('click',function(){gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});});});document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){el.addEventListener('click',function(){gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});});});}
   var consent=localStorage.getItem('hh_consent');var banner=document.getElementById('cookie-banner');
   if(consent==='yes'){loadGA();}else if(consent!=='no'){banner.style.display='flex';}
   document.getElementById('cookie-accept').addEventListener('click',function(){localStorage.setItem('hh_consent','yes');banner.style.display='none';loadGA();});

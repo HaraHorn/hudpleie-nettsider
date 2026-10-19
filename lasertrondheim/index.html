@@ -128,7 +128,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.remove.no/?utm_source=google&utm_medium=maps" target="_blank" class="btn-primary" data-klinikk="Remove Hudklinikk Trondheim">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Remove+Hudklinikk+Trondheim+St.+Olavs+gate+9%2C+7012+Trondheim" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Remove+Hudklinikk+Trondheim+St.+Olavs+gate+9%2C+7012+Trondheim" target="_blank" class="btn-secondary" data-klinikk-kart="Remove Hudklinikk Trondheim">Kart</a>
         </div>
       </div>
 
@@ -149,7 +149,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.novelaklinikken.no/" target="_blank" class="btn-primary" data-klinikk="Novelaklinikken">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Novelaklinikken+Fjordgata+31%2C+7010+Trondheim" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Novelaklinikken+Fjordgata+31%2C+7010+Trondheim" target="_blank" class="btn-secondary" data-klinikk-kart="Novelaklinikken">Kart</a>
         </div>
       </div>
 
@@ -170,7 +170,7 @@
         </div>
         <div class="card-footer">
           <a href="http://ciana.no/" target="_blank" class="btn-primary" data-klinikk="Ciana Klinikken">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Ciana+Klinikken+Bratt%C3%B8rgata+10%2C+7010+Trondheim" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Ciana+Klinikken+Bratt%C3%B8rgata+10%2C+7010+Trondheim" target="_blank" class="btn-secondary" data-klinikk-kart="Ciana Klinikken">Kart</a>
         </div>
       </div>
 
@@ -191,7 +191,7 @@
         </div>
         <div class="card-footer">
           <a href="https://velbehagklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Velbehag Medisinsk Hudklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Fjordgata+9b%2C+7010+Trondheim" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Fjordgata+9b%2C+7010+Trondheim" target="_blank" class="btn-secondary" data-klinikk-kart="Velbehag Medisinsk Hudklinikk">Kart</a>
         </div>
       </div>
 
@@ -212,7 +212,7 @@
         </div>
         <div class="card-footer">
           <a href="https://elaklinikken.no/" target="_blank" class="btn-primary" data-klinikk="Ela clinic AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Ela+clinic+AS+Olav+Tryggvasons+gt.+49%2C+7011+Trondheim" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Ela+clinic+AS+Olav+Tryggvasons+gt.+49%2C+7011+Trondheim" target="_blank" class="btn-secondary" data-klinikk-kart="Ela clinic AS">Kart</a>
         </div>
       </div>
 
@@ -384,6 +384,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

@@ -104,7 +104,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.hudpleieklinikken.no/" target="_blank" class="btn-primary" data-klinikk="Oslo Skincare Clinic AS, Branch Majorstua">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Oslo+Skincare+Clinic+AS%2C+Branch+Majorstua+Bogstadveien+49%2C+0366+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Oslo+Skincare+Clinic+AS%2C+Branch+Majorstua+Bogstadveien+49%2C+0366+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Oslo Skincare Clinic AS, Branch Majorstua">Kart</a>
         </div>
       </div>
 
@@ -125,7 +125,7 @@
         </div>
         <div class="card-footer">
           <a href="http://osloskin.no/" target="_blank" class="btn-primary" data-klinikk="Oslo Skin Hudpleieklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Oslo+Skin+Hudpleieklinikk+Sandakerveien+106%2C+0484+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Oslo+Skin+Hudpleieklinikk+Sandakerveien+106%2C+0484+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Oslo Skin Hudpleieklinikk">Kart</a>
         </div>
       </div>
 
@@ -146,7 +146,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.globalskinclinic.no/" target="_blank" class="btn-primary" data-klinikk="Global Skin Clinic">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Global+Skin+Clinic+Fridtjof+Nansens+plass+9%2C+0160+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Global+Skin+Clinic+Fridtjof+Nansens+plass+9%2C+0160+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Global Skin Clinic">Kart</a>
         </div>
       </div>
 
@@ -167,7 +167,7 @@
         </div>
         <div class="card-footer">
           <a href="http://egerskinclinic.no/" target="_blank" class="btn-primary" data-klinikk="Eger Skin Clinic">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Eger+Skin+Clinic+%C3%98vre+Slottsgate+27%2C+0157+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Eger+Skin+Clinic+%C3%98vre+Slottsgate+27%2C+0157+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Eger Skin Clinic">Kart</a>
         </div>
       </div>
 
@@ -188,7 +188,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.minhud.no/" target="_blank" class="btn-primary" data-klinikk="Min Hud AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Min+Hud+AS+B%C3%B8kkerveien+4%2C+0579+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Min+Hud+AS+B%C3%B8kkerveien+4%2C+0579+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Min Hud AS">Kart</a>
         </div>
       </div>
 
@@ -372,6 +372,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

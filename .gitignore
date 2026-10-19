@@ -1,2 +1,7 @@
 .env
 node_modules/
+
+# Klikk-rapporter og tjenestekonto-nøkler skal aldri i git
+rapporter/
+*service-account*.json
+ga-nokkel*.json

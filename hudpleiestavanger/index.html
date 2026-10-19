@@ -128,7 +128,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.bareclinic.no/" target="_blank" class="btn-primary" data-klinikk="bARe clinic avd. Stаνaոgеr">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=bARe+clinic+avd.+St%D0%B0%CE%BDa%D5%B8g%D0%B5r+Kirkegata+27%2C+4006+Stavanger" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=bARe+clinic+avd.+St%D0%B0%CE%BDa%D5%B8g%D0%B5r+Kirkegata+27%2C+4006+Stavanger" target="_blank" class="btn-secondary" data-klinikk-kart="bARe clinic avd. Stаνaոgеr">Kart</a>
         </div>
       </div>
 
@@ -149,7 +149,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.silkehud.no/" target="_blank" class="btn-primary" data-klinikk="Silkehud AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Silkehud+AS+Breivikveien+19A%2C+4014+Stavanger" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Silkehud+AS+Breivikveien+19A%2C+4014+Stavanger" target="_blank" class="btn-secondary" data-klinikk-kart="Silkehud AS">Kart</a>
         </div>
       </div>
 
@@ -170,7 +170,7 @@
         </div>
         <div class="card-footer">
           <a href="https://velbehagklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Velbehag Medisinsk Hudklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Kirkegata+31%2C+4006+Stavanger" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Kirkegata+31%2C+4006+Stavanger" target="_blank" class="btn-secondary" data-klinikk-kart="Velbehag Medisinsk Hudklinikk">Kart</a>
         </div>
       </div>
 
@@ -191,7 +191,7 @@
         </div>
         <div class="card-footer">
           <a href="http://stavangerhudpleie.no/" target="_blank" class="btn-primary" data-klinikk="Stavanger HudpIeie">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Stavanger+HudpIeie+Madlastokken+5A%2C+4042+Hafrsfjord" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Stavanger+HudpIeie+Madlastokken+5A%2C+4042+Hafrsfjord" target="_blank" class="btn-secondary" data-klinikk-kart="Stavanger HudpIeie">Kart</a>
         </div>
       </div>
 
@@ -372,6 +372,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

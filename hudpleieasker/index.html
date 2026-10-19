@@ -128,7 +128,7 @@
         </div>
         <div class="card-footer">
           <a href="https://askerhudogvelvare.no/" target="_blank" class="btn-primary" data-klinikk="Asker skin and wellness">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Asker+skin+and+wellness+Bankveien+7%2C+1383+Asker" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Asker+skin+and+wellness+Bankveien+7%2C+1383+Asker" target="_blank" class="btn-secondary" data-klinikk-kart="Asker skin and wellness">Kart</a>
         </div>
       </div>
 
@@ -149,7 +149,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.hudasker.no/" target="_blank" class="btn-primary" data-klinikk="[hud]">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=%5Bhud%5D+Str%C3%B8ket+8%2C+1383+Asker" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=%5Bhud%5D+Str%C3%B8ket+8%2C+1383+Asker" target="_blank" class="btn-secondary" data-klinikk-kart="[hud]">Kart</a>
         </div>
       </div>
 
@@ -170,7 +170,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.madamebeauty.no/" target="_blank" class="btn-primary" data-klinikk="Madame Beauty Hud & Velvære">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Madame+Beauty+Hud+%26+Velv%C3%A6re+Str%C3%B8ket+9%2C+3.+etg%2C+1383+Asker" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Madame+Beauty+Hud+%26+Velv%C3%A6re+Str%C3%B8ket+9%2C+3.+etg%2C+1383+Asker" target="_blank" class="btn-secondary" data-klinikk-kart="Madame Beauty Hud & Velvære">Kart</a>
         </div>
       </div>
 
@@ -191,7 +191,7 @@
         </div>
         <div class="card-footer">
           <a href="https://askerestetikk.no/" target="_blank" class="btn-primary" data-klinikk="Asker Estetikk Klinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Asker+Estetikk+Klinikk+Str%C3%B8ket+7%2C+1383+Asker" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Asker+Estetikk+Klinikk+Str%C3%B8ket+7%2C+1383+Asker" target="_blank" class="btn-secondary" data-klinikk-kart="Asker Estetikk Klinikk">Kart</a>
         </div>
       </div>
 
@@ -212,7 +212,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.hudasker.no/" target="_blank" class="btn-primary" data-klinikk="[hud] Asker avd. Trekanten">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=%5Bhud%5D+Asker+avd.+Trekanten+Knud+Askers+vei+26%2C+1383+Asker" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=%5Bhud%5D+Asker+avd.+Trekanten+Knud+Askers+vei+26%2C+1383+Asker" target="_blank" class="btn-secondary" data-klinikk-kart="[hud] Asker avd. Trekanten">Kart</a>
         </div>
       </div>
 
@@ -386,6 +386,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

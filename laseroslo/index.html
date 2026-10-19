@@ -104,7 +104,7 @@
         </div>
         <div class="card-footer">
           <a href="http://oslolaserklinikk.no/om-oslo-laserklinikk.html" target="_blank" class="btn-primary" data-klinikk="Oslo Laserklinikk AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Oslo+Laserklinikk+AS+Hegdehaugsveien+1%2C+0352+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Oslo+Laserklinikk+AS+Hegdehaugsveien+1%2C+0352+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Oslo Laserklinikk AS">Kart</a>
         </div>
       </div>
 
@@ -125,7 +125,7 @@
         </div>
         <div class="card-footer">
           <a href="https://laserskinclinic.no/" target="_blank" class="btn-primary" data-klinikk="Laser & Skin Clinic">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Laser+%26+Skin+Clinic+Stenersgata+2B%2C+0184+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Laser+%26+Skin+Clinic+Stenersgata+2B%2C+0184+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Laser & Skin Clinic">Kart</a>
         </div>
       </div>
 
@@ -146,7 +146,7 @@
         </div>
         <div class="card-footer">
           <a href="http://egerskinclinic.no/" target="_blank" class="btn-primary" data-klinikk="Eger Skin Clinic">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Eger+Skin+Clinic+%C3%98vre+Slottsgate+27%2C+0157+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Eger+Skin+Clinic+%C3%98vre+Slottsgate+27%2C+0157+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Eger Skin Clinic">Kart</a>
         </div>
       </div>
 
@@ -167,7 +167,7 @@
         </div>
         <div class="card-footer">
           <a href="https://drcolom.com/" target="_blank" class="btn-primary" data-klinikk="Dr. COLOM. HUDLEGE OG LASERKLINIKK">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Dr.+COLOM.+HUDLEGE+OG+LASERKLINIKK+Niels+Juels+gate+40A%2C+0257+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Dr.+COLOM.+HUDLEGE+OG+LASERKLINIKK+Niels+Juels+gate+40A%2C+0257+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Dr. COLOM. HUDLEGE OG LASERKLINIKK">Kart</a>
         </div>
       </div>
 
@@ -188,7 +188,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.eraze.no/" target="_blank" class="btn-primary" data-klinikk="Eraze AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Eraze+AS+Kirkeveien+64+A%2C+0364+Oslo" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Eraze+AS+Kirkeveien+64+A%2C+0364+Oslo" target="_blank" class="btn-secondary" data-klinikk-kart="Eraze AS">Kart</a>
         </div>
       </div>
 
@@ -373,6 +373,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

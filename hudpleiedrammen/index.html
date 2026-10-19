@@ -129,7 +129,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.hudsykepleieren.no/" target="_blank" class="btn-primary" data-klinikk="Skin Clinic Drammen">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Skin+Clinic+Drammen+Nedre+Storgate+22+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Skin+Clinic+Drammen+Nedre+Storgate+22+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="Skin Clinic Drammen">Kart</a>
         </div>
       </div>
 
@@ -150,7 +150,7 @@
         </div>
         <div class="card-footer">
           <a href="https://hudogvelvare.no/" target="_blank" class="btn-primary" data-klinikk="Hud & Velværeklinikken">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Hud+Velvareklinikken+Nedre+Storgate+11+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Hud+Velvareklinikken+Nedre+Storgate+11+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="Hud & Velværeklinikken">Kart</a>
         </div>
       </div>
 
@@ -171,7 +171,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.winskin.no/" target="_blank" class="btn-primary" data-klinikk="Winskin Hudpleie Drammen">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Winskin+Hudpleie+Lierstranda+97+Lierstranda" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Winskin+Hudpleie+Lierstranda+97+Lierstranda" target="_blank" class="btn-secondary" data-klinikk-kart="Winskin Hudpleie Drammen">Kart</a>
         </div>
       </div>
 
@@ -192,7 +192,7 @@
         </div>
         <div class="card-footer">
           <a href="https://velbehagklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Velbehag Medisinsk Hudklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Nedre+Storgate+14+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Nedre+Storgate+14+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="Velbehag Medisinsk Hudklinikk">Kart</a>
         </div>
       </div>
 
@@ -213,7 +213,7 @@
         </div>
         <div class="card-footer">
           <a href="https://drammenhud.no/" target="_blank" class="btn-primary" data-klinikk="Drammen hud, kropp og fotpleie">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Drammen+hud+kropp+og+fotpleie+Schwenckegata+11+Drammen" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Drammen+hud+kropp+og+fotpleie+Schwenckegata+11+Drammen" target="_blank" class="btn-secondary" data-klinikk-kart="Drammen hud, kropp og fotpleie">Kart</a>
         </div>
       </div>
 
@@ -387,6 +387,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

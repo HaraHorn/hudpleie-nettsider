@@ -112,7 +112,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.mklaser.no/" target="_blank" class="btn-primary" data-klinikk="MK Estetisk Hudklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=MK+Estetisk+Hudklinikk+Avenyen+3%2C+4636+Kristiansand" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=MK+Estetisk+Hudklinikk+Avenyen+3%2C+4636+Kristiansand" target="_blank" class="btn-secondary" data-klinikk-kart="MK Estetisk Hudklinikk">Kart</a>
         </div>
       </div>
 
@@ -133,7 +133,7 @@
         </div>
         <div class="card-footer">
           <a href="https://velbehagklinikk.no/" target="_blank" class="btn-primary" data-klinikk="Velbehag Medisinsk Hudklinikk">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Kirkegata+26%2C+4612+Kristiansand" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Velbehag+Medisinsk+Hudklinikk+Kirkegata+26%2C+4612+Kristiansand" target="_blank" class="btn-secondary" data-klinikk-kart="Velbehag Medisinsk Hudklinikk">Kart</a>
         </div>
       </div>
 
@@ -154,7 +154,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.klinikknyhud.no/" target="_blank" class="btn-primary" data-klinikk="Klinikk Nyhud avd. Sentrum">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Klinikk+Nyhud+avd.+Sentrum+Kirkegata+18A%2C+4611+Kristiansand" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Klinikk+Nyhud+avd.+Sentrum+Kirkegata+18A%2C+4611+Kristiansand" target="_blank" class="btn-secondary" data-klinikk-kart="Klinikk Nyhud avd. Sentrum">Kart</a>
         </div>
       </div>
 
@@ -175,7 +175,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.saits.no/" target="_blank" class="btn-primary" data-klinikk="Saits Medisinske">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Saits+Medisinske+Vestre+Strandgate+32%2C+2+etasje%2C+4612+Kristiansand" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Saits+Medisinske+Vestre+Strandgate+32%2C+2+etasje%2C+4612+Kristiansand" target="_blank" class="btn-secondary" data-klinikk-kart="Saits Medisinske">Kart</a>
         </div>
       </div>
 
@@ -195,7 +195,7 @@
         </div>
         <div class="card-footer">
           <button class="btn-primary">Se mer</button>
-          <a href="https://maps.google.com/?q=Spectrum+Laser+Clinic+Henrik+Wergelands+gate+24%2C+4612+Kristiansand" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Spectrum+Laser+Clinic+Henrik+Wergelands+gate+24%2C+4612+Kristiansand" target="_blank" class="btn-secondary" data-klinikk-kart="Spectrum Laser Clinic">Kart</a>
         </div>
       </div>
 
@@ -380,6 +380,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }

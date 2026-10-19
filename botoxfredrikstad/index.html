@@ -128,7 +128,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.cosmeticaklinikken.no/" target="_blank" class="btn-primary" data-klinikk="CosmeticaKlinikken">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=CosmeticaKlinikken+Storveien+3a%2C+1624+Gressvik" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=CosmeticaKlinikken+Storveien+3a%2C+1624+Gressvik" target="_blank" class="btn-secondary" data-klinikk-kart="CosmeticaKlinikken">Kart</a>
         </div>
       </div>
 
@@ -149,7 +149,7 @@
         </div>
         <div class="card-footer">
           <a href="https://www.skinwise.no/" target="_blank" class="btn-primary" data-klinikk="Skinwise">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Skinwise+Cicignongata+15%2C+1606+Fredrikstad" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Skinwise+Cicignongata+15%2C+1606+Fredrikstad" target="_blank" class="btn-secondary" data-klinikk-kart="Skinwise">Kart</a>
         </div>
       </div>
 
@@ -170,7 +170,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.tmklinikken.no/" target="_blank" class="btn-primary" data-klinikk="TM clinic AS">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=TM+clinic+AS+Nygaardsgata+36%2C+1607+Fredrikstad" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=TM+clinic+AS+Nygaardsgata+36%2C+1607+Fredrikstad" target="_blank" class="btn-secondary" data-klinikk-kart="TM clinic AS">Kart</a>
         </div>
       </div>
 
@@ -191,7 +191,7 @@
         </div>
         <div class="card-footer">
           <a href="http://www.cicignonklinikken.no/" target="_blank" class="btn-primary" data-klinikk="Cicignonklinikken">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Cicignonklinikken+Arne+Stangebyes+gate+11%2C+1607+Fredrikstad" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Cicignonklinikken+Arne+Stangebyes+gate+11%2C+1607+Fredrikstad" target="_blank" class="btn-secondary" data-klinikk-kart="Cicignonklinikken">Kart</a>
         </div>
       </div>
 
@@ -212,7 +212,7 @@
         </div>
         <div class="card-footer">
           <a href="https://drgudim.no/" target="_blank" class="btn-primary" data-klinikk="Doktor Gudim">Besøk nettside</a>
-          <a href="https://maps.google.com/?q=Doktor+Gudim+Smedens+vei+3%2C+1605+Fredrikstad" target="_blank" class="btn-secondary">Kart</a>
+          <a href="https://maps.google.com/?q=Doktor+Gudim+Smedens+vei+3%2C+1605+Fredrikstad" target="_blank" class="btn-secondary" data-klinikk-kart="Doktor Gudim">Kart</a>
         </div>
       </div>
 
@@ -399,6 +399,11 @@
     document.querySelectorAll('a[data-klinikk]').forEach(function(el){
       el.addEventListener('click',function(){
         gtag('event','klinikk_klikk',{klinikk_navn:el.dataset.klinikk,side:document.title});
+      });
+    });
+    document.querySelectorAll('a[data-klinikk-kart]').forEach(function(el){
+      el.addEventListener('click',function(){
+        gtag('event','klinikk_kart_klikk',{klinikk_navn:el.dataset.klinikkKart,side:document.title});
       });
     });
   }
