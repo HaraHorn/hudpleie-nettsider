@@ -8,7 +8,8 @@
 //   klinikk_kart_klikk  – klikk på «Kart»
 // fra ALLE GA4-properties (én per side) og lager én samlet rapport (HTML + CSV).
 //
-// Kjør:    node scripts/klikk_rapport.js [--dager 30] [--fra 2026-09-01 --til 2026-09-30] [--ut rapporter]
+// Kjør:    node scripts/klikk_rapport.js [--dager 30] [--fra 2026-09-01 --til 2026-09-30] [--ut rapporter] [--pdf]
+//          --pdf lager også en PDF (bruker Edge/Chrome i usynlig modus; sett CHROME_PATH i .env hvis den ikke finnes automatisk)
 // Engangsoppsett (se også CLAUDE.md → «Klikk-rapport»):
 //   node scripts/klikk_rapport.js --opprett-dimensjoner
 //     oppretter custom dimension «klinikk_navn» i alle properties som mangler den
@@ -22,6 +23,9 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const os = require('os');
+const { execFile } = require('child_process');
+const { pathToFileURL } = require('url');
 
 const ROOT = path.join(__dirname, '..');
 
@@ -52,11 +56,12 @@ const USAGE = `Bruk: node scripts/klikk_rapport.js [valg]
   --fra YYYY-MM-DD        Startdato (sammen med --til, overstyrer --dager)
   --til YYYY-MM-DD        Sluttdato
   --ut MAPPE              Hvor rapporten lagres (standard: rapporter/)
+  --pdf                   Lag også en PDF av rapporten (krever Edge eller Chrome installert)
   --opprett-dimensjoner   Opprett custom dimension «${DIMENSION}» i alle properties som mangler den, og avslutt
   --hjelp                 Vis denne hjelpen`;
 
 function parseArgs(argv) {
-  const args = { dager: 30, fra: null, til: null, ut: 'rapporter', opprettDimensjoner: false, hjelp: false };
+  const args = { dager: 30, fra: null, til: null, ut: 'rapporter', pdf: false, opprettDimensjoner: false, hjelp: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     const next = () => {
@@ -67,6 +72,7 @@ function parseArgs(argv) {
     else if (a === '--fra') args.fra = next();
     else if (a === '--til') args.til = next();
     else if (a === '--ut') args.ut = next();
+    else if (a === '--pdf') args.pdf = true;
     else if (a === '--opprett-dimensjoner') args.opprettDimensjoner = true;
     else if (a === '--hjelp' || a === '-h') args.hjelp = true;
     else throw new Error(`Ukjent valg: ${a}\n\n${USAGE}`);
@@ -434,6 +440,21 @@ details{background:var(--card);border:1px solid var(--line);border-radius:10px;m
 summary{padding:10px 16px;cursor:pointer;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
 summary .meta{color:var(--muted)}
 details .tablewrap{border:0;border-top:1px solid var(--line);border-radius:0}
+@page{size:A4;margin:14mm}
+@media print{
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{padding:0;font-size:11px}
+th,td{white-space:normal;padding:4px 8px}
+.tablewrap{overflow:visible}
+thead{display:table-header-group}
+tr,details{break-inside:avoid}
+h2{break-after:avoid}
+.sub,.note{font-size:11px}
+.cards{grid-template-columns:repeat(4,1fr);gap:8px}
+.card{padding:10px 12px}
+.card b{font-size:20px}
+.card span{font-size:11px}
+}
 `;
 
 // Ren JS uten malstrenger, så den kan ligge trygt i en vanlig streng.
@@ -455,7 +476,9 @@ document.querySelectorAll('table.sortable').forEach(function(t){
   });
 });`;
 
-function renderHtml(report, rangeLabel, generated = new Date()) {
+// forPrint: alle «per side»-seksjoner åpnes, siden lukkede <details> ikke havner i en PDF.
+function renderHtml(report, rangeLabel, generated = new Date(), { forPrint = false } = {}) {
+  const openAttr = forPrint ? ' open' : '';
   const numCell = n => `<td class="n" data-v="${n}">${nf(n)}</td>`;
   const header = cols => `<thead><tr>${cols.map(([t, num]) => `<th${num ? ' class="n"' : ''}>${esc(t)}</th>`).join('')}</tr></thead>`;
 
@@ -469,11 +492,11 @@ function renderHtml(report, rangeLabel, generated = new Date()) {
   const siteSections = report.siteReports.map(sr => {
     const title = `<span><strong>${esc(sr.site.domain)}</strong> <span class="meta">· ${esc(sr.site.city)} · ${esc(sr.site.keyword)}</span></span>`;
     if (sr.status !== 'ok') {
-      return `<details><summary>${title}<span class="meta">Ikke med: ${esc(sr.message)}</span></summary></details>`;
+      return `<details${openAttr}><summary>${title}<span class="meta">Ikke med: ${esc(sr.message)}</span></summary></details>`;
     }
     const rows = sr.clinics.map(c => `<tr><td class="name" data-v="${esc(c.name)}">${esc(c.name)}${c.listed ? '' : '<span class="tag">ikke lenger på siden</span>'}</td>` +
       `${numCell(c.nettside)}${numCell(c.kart)}${numCell(c.total)}</tr>`).join('\n');
-    return `<details><summary>${title}<span class="meta">${nf(sr.totals.nettside)} nettside · ${nf(sr.totals.kart)} kart · ${nf(sr.totals.total)} totalt</span></summary>` +
+    return `<details${openAttr}><summary>${title}<span class="meta">${nf(sr.totals.nettside)} nettside · ${nf(sr.totals.kart)} kart · ${nf(sr.totals.total)} totalt</span></summary>` +
       `<div class="tablewrap"><table class="sortable">${header([['Klinikk'], ['Nettside', 1], ['Kart', 1], ['Totalt', 1]])}<tbody>${rows}</tbody></table></div></details>`;
   }).join('\n');
 
@@ -515,6 +538,53 @@ ${siteSections}
 `;
 }
 
+// ─── PDF (via Edge/Chrome i usynlig modus) ───────────────────────────────────
+
+function findBrowser() {
+  const fromEnv = process.env.CHROME_PATH;
+  if (fromEnv) {
+    if (fs.existsSync(fromEnv)) return fromEnv;
+    throw new Error(`CHROME_PATH peker på en fil som ikke finnes: ${fromEnv}`);
+  }
+  const pf = process.env.ProgramFiles, pf86 = process.env['ProgramFiles(x86)'], local = process.env.LOCALAPPDATA;
+  const candidates = process.platform === 'win32' ? [
+    pf86 && path.join(pf86, 'Microsoft', 'Edge', 'Application', 'msedge.exe'),
+    pf && path.join(pf, 'Microsoft', 'Edge', 'Application', 'msedge.exe'),
+    pf && path.join(pf, 'Google', 'Chrome', 'Application', 'chrome.exe'),
+    pf86 && path.join(pf86, 'Google', 'Chrome', 'Application', 'chrome.exe'),
+    local && path.join(local, 'Google', 'Chrome', 'Application', 'chrome.exe'),
+  ] : process.platform === 'darwin' ? [
+    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',
+  ] : ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser', '/usr/bin/microsoft-edge'];
+  const found = candidates.filter(Boolean).find(p => fs.existsSync(p));
+  if (!found) throw new Error('Fant verken Edge eller Chrome. Installer en av dem, eller sett CHROME_PATH i .env til nettleserens .exe-fil.');
+  return found;
+}
+
+// Egen midlertidig profilmappe, ellers kan en allerede åpen Edge/Chrome ta over kommandoen og aldri avslutte.
+async function makePdf(report, rangeLabel, pdfPath) {
+  const browser = findBrowser();
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'klikk-rapport-'));
+  try {
+    const htmlFile = path.join(tmp, 'rapport.html');
+    fs.writeFileSync(htmlFile, renderHtml(report, rangeLabel, new Date(), { forPrint: true }), 'utf8');
+    fs.rmSync(pdfPath, { force: true }); // ikke la en gammel PDF se ut som en ny
+    await new Promise((resolve, reject) => {
+      execFile(browser, [
+        '--headless', '--disable-gpu', '--no-first-run',
+        `--user-data-dir=${path.join(tmp, 'profil')}`,
+        '--no-pdf-header-footer',
+        `--print-to-pdf=${pdfPath}`,
+        pathToFileURL(htmlFile).href,
+      ], { timeout: 90000, windowsHide: true }, err => (err ? reject(new Error(`Nettleseren feilet: ${err.message}`)) : resolve()));
+    });
+    if (!fs.existsSync(pdfPath) || fs.statSync(pdfPath).size === 0) throw new Error('Nettleseren lagde ingen PDF');
+  } finally {
+    try { fs.rmSync(tmp, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 }); } catch { /* temp-filer, ufarlig */ }
+  }
+}
+
 // ─── Konsollutskrift ─────────────────────────────────────────────────────────
 
 function printSummary(report, rangeLabel, files) {
@@ -537,7 +607,7 @@ function printSummary(report, rangeLabel, files) {
     report.warnings.forEach(w => console.log('   - ' + w));
   }
   console.log('\n  Kun besøkende som har godtatt cookies telles – tallene er lavere enn faktiske klikk.');
-  console.log(`\n  Rapport: ${files.html}\n  CSV:     ${files.csv}\n`);
+  console.log(`\n  Rapport: ${files.html}\n  CSV:     ${files.csv}${files.pdf ? `\n  PDF:     ${files.pdf}` : ''}\n`);
 }
 
 // ─── Hovedløp ────────────────────────────────────────────────────────────────
@@ -601,6 +671,15 @@ async function main(argv = process.argv.slice(2)) {
   };
   fs.writeFileSync(files.html, renderHtml(report, range.label), 'utf8');
   fs.writeFileSync(files.csv, renderCsv(report), 'utf8');
+  if (args.pdf) {
+    files.pdf = path.join(outDir, `klikk-rapport-${stamp}.pdf`);
+    try {
+      await makePdf(report, range.label, files.pdf);
+    } catch (e) {
+      console.warn(`\nKunne ikke lage PDF: ${e.message}\n(HTML- og CSV-rapporten er laget.)`);
+      delete files.pdf;
+    }
+  }
   printSummary(report, range.label, files);
 }
 
@@ -613,5 +692,5 @@ if (require.main === module) {
 
 module.exports = {
   parseArgs, dateRange, discoverSites, decodeEntities, normHost, makeJwt,
-  buildReport, renderCsv, renderHtml, main,
+  buildReport, renderCsv, renderHtml, makePdf, findBrowser, main,
 };

@@ -165,8 +165,10 @@ Hver side har sin egen unike GA4-ID (`var ID='G-...'`) – aldri gjenbruk en ann
 node scripts/klikk_rapport.js                      # siste 30 dager
 node scripts/klikk_rapport.js --dager 7
 node scripts/klikk_rapport.js --fra 2026-09-01 --til 2026-09-30
+node scripts/klikk_rapport.js --pdf                # lager også en PDF
 ```
 Lager `rapporter/klikk-rapport-<dato>.html` (sorterbar, samlet + per side) og `.csv` (åpnes i Excel). `rapporter/` er i .gitignore.
+`--pdf` bruker Edge eller Chrome i usynlig modus (finnes automatisk; ellers sett `CHROME_PATH` i `.env`) og gir en A4-PDF med alle sider åpnet.
 Scriptet finner sidene og GA4-IDene selv fra `index.html`-filene, og slår opp riktig GA4-property via målings-ID-en.
 
 **Engangsoppsett:**
